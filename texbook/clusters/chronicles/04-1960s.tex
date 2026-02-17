@@ -1,157 +1,136 @@
 \chapter{The Era of Interactivity (1960 -- 1969)}
 
-Dekade 1960-an adalah masa di mana komputer mulai berhenti menjadi sekadar "mesin hitung" yang kaku dan mulai menjadi "medium" untuk interaksi manusia. Ini adalah dekade yang melahirkan konsep yang kita sebut sebagai *personal computing*, internet, dan sistem operasi modern. Jika 1950-an adalah tentang abstraksi bahasa, maka 1960-an adalah tentang abstraksi waktu dan ruang. Sebagai Artisan, kita melihat era ini sebagai momen di mana kontrol mulai bergeser dari operator mesin ke pengguna akhir.
+Jika dekade 1950-an adalah tentang bagaimana kita belajar berbicara "bahasa" mesin melalui Compiler dan Assembly, maka dekade 1960-an adalah tentang bagaimana kita mulai mengubah "sifat" percakapan tersebut.
 
-\section{1960: Standarisasi Logika dan Minikomputer (ALGOL \& PDP-1)}
+Hingga akhir tahun 1959, hubungan antara manusia dan komputer masih bersifat \textit{Batch Processing}. Bayangkan ini seperti mengirim surat: Anda menulis kode di atas kertas, memberikannya kepada operator (Sang Imam Besar), dan menunggu berjam-jam atau berhari-hari untuk mendapatkan balasan. Tidak ada dialog. Tidak ada interaksi. Anda tidak bisa meralat kesalahan saat itu juga. Mesin adalah entitas yang dingin, jauh, dan agung, tersembunyi di balik dinding kaca ber-AC yang steril.
 
-Tahun ini membawa upaya pertama untuk menciptakan bahasa pemrograman universal yang benar-benar elegan secara matematis, sekaligus kelahiran mesin yang lebih "intim".
+Namun, di awal dekade ini, sekelompok visioner—para Artisan awal yang menolak status quo—mulai membayangkan sesuatu yang radikal. Bagaimana jika kita tidak perlu menunggu? Bagaimana jika kita bisa mengetikkan perintah, dan mesin menjawab \textit{saat itu juga}? Bagaimana jika komputer bukan sekadar kalkulator raksasa, tetapi alat untuk memperluas kemampuan berpikir manusia?
 
-\begin{description}
-    \item[ALGOL 60 (Algorithmic Language)] \textit{Saat pertama kali dibuat} oleh sebuah komite internasional, ALGOL 60 memperkenalkan konsep struktur blok (\textit{block structure}) dan cakupan variabel (\textit{variable scope}) yang menjadi standar bagi hampir semua bahasa pemrograman imperatif saat ini. Ia adalah bahasa yang dirancang untuk kesempurnaan deskripsi algoritma.
+Dekade 1960-an adalah dekade "Pemberontakan Interaktif". Ini adalah saat di mana \textit{Time-Sharing} menghancurkan monopoli waktu mainframe. Ini adalah saat di mana \textit{Minicomputer} membawa mesin keluar dari katedral korporat. Ini adalah dekade di mana J.C.R. Licklider memimpikan \textit{Man-Computer Symbiosis}, dan Douglas Engelbart menunjukkan kepada dunia bagaimana wujud masa depan itu. Dan di penghujung dekade, di tengah Perang Dingin yang memanas, benih internet (ARPANET) dan sistem operasi modern (UNIX) ditanam.
 
-    \textit{Pada saat buku ini dibuat di tahun 2026}, kita melihat ALGOL bukan sebagai bahasa yang banyak digunakan secara komersial, tetapi sebagai "DNA" dari C, Java, dan Rust. Sebagai Artisan, ALGOL mengajari kita tentang pentingnya desain yang bersih. Pengaruh ALGOL tidak datang dari dominasi pasar (yang dimenangkan oleh FORTRAN dan COBOL), tetapi dari keanggunan strukturnya yang merasuki pikiran para desainer bahasa selama dekade-dekade berikutnya. Ini adalah bukti bahwa desain yang superior secara intelektual akan selalu menemukan cara untuk mempengaruh masa depan, meskipun ia tidak menjadi produk yang paling laris.
+Bagi seorang Artisan di tahun 2026, era ini mengajarkan satu prinsip fundamental: \textbf{Responsivitas}. Alat yang baik adalah alat yang memberikan umpan balik instan. Tanpa latensi tahun 60-an yang memaksa lahirnya interaktivitas, kita tidak akan pernah memiliki \textit{REPL}, \textit{IntelliSense}, atau \textit{Generative AI} yang kita nikmati hari ini.
 
-    \item[DEC PDP-1] \textit{Saat pertama kali dibuat}, PDP-1 adalah komputer pertama yang tidak memerlukan pendingin ruangan besar dan perlengkapan operator yang rumit. Ia interaktif—memiliki layar CRT dan memungkinkan pengguna untuk mengoperasikannya secara langsung. Di mesin inilah game komputer pertama, *Spacewar!*, lahir.
+\section{1960 -- 1962: Visi Simbiosis dan Hacking Pertama}
 
-    \textit{Pada saat buku ini dibuat}, kita melihat PDP-1 sebagai kakek buyut dari *workstation* modern. Sebagai Artisan, PDP-1 mengajarkan kita tentang "pengaruh melalui aksesibilitas". Ketika sebuah mesin menjadi lebih mudah dijangkau oleh tangan manusia tanpa perantara, kreativitas meledak. *Spacewar!* bukan sekadar game; ia adalah bukti bahwa komputer bisa digunakan untuk kegembiraan dan eksplorasi, bukan hanya perhitungan pajak.
-\end{description}
+Segalanya dimulai bukan dengan sebuah chip, tetapi dengan sebuah ide. Pada tahun 1960, J.C.R. Licklider, seorang psikolog yang beralih menjadi ilmuwan komputer di MIT dan kemudian ARPA, menerbitkan sebuah makalah mani berjudul \textit{"Man-Computer Symbiosis"}.
 
-\section{1961: Waktu yang Terbagi (Time-sharing \& CTSS)}
+Dalam makalah tersebut, Licklider menuliskan visi yang melampaui zamannya:
+\begin{quote}
+"Harapan saya adalah bahwa dalam waktu yang tidak terlalu lama, otak manusia dan mesin komputasi akan digabungkan bersama dengan sangat erat, dan mesin yang dihasilkan akan berpikir sebagaimana tidak pernah dipikirkan oleh otak manusia manapun dan memproses data dengan cara yang tidak pernah didekati oleh mesin pemrosesan informasi yang kita kenal sekarang."
+\end{quote}
 
-Salah satu lompatan konseptual terbesar terjadi di MIT dengan pengembangan *Compatible Time-Sharing System* (CTSS).
+Licklider tidak melihat komputer sebagai pengganti manusia, melainkan sebagai \textit{mitra}. Ia membayangkan sebuah masa depan di mana mesin menangani tugas-tugas rutin yang membosankan (kalkulasi, pencarian data), sementara manusia menangani wawasan, intuisi, dan pengambilan keputusan. Visi inilah yang memicu pendanaan masif dari ARPA (Advanced Research Projects Agency) untuk proyek-proyek yang berfokus pada interaksi manusia-komputer, bukan sekadar kecepatan hitung.
 
-\begin{description}
-    \item[CTSS \& Time-sharing] \textit{Saat pertama kali dibuat} oleh Fernando Corbató, *Compatible Time-Sharing System* (CTSS) memungkinkan banyak pengguna untuk menggunakan satu komputer secara bersamaan melalui terminal jarak jauh. Inti dari sistem ini adalah *Supervisor*—sebuah program manajemen yang sangat canggih pada masanya, yang bertugas mengatur alokasi waktu CPU dan memori untuk setiap pengguna. CTSS membuktikan bahwa interaksi *real-time* bukanlah kemewahan, melainkan kebutuhan bagi produktivitas intelektual.
+Manifestasi fisik pertama dari "interaksi" ini datang bukan dari IBM yang raksasa, tetapi dari perusahaan kecil bernama DEC (Digital Equipment Corporation). Pada tahun 1960, mereka merilis \textbf{PDP-1} (\textit{Programmed Data Processor-1}).
 
-    \textit{Pada saat buku ini dibuat}, konsep *multi-tasking* dan *multi-user* adalah hal yang kita anggap remeh. Namun, di tahun 1961, ini adalah revolusi dalam efisiensi intelektual. Sebagai Artisan, *time-sharing* mengajarkan kita tentang demokratisasi sumber daya. Pengaruh sejati datang bukan dari memiliki segalanya, tapi dari kemampuan untuk membagi kapasitas tanpa mengorbankan pengalaman individu. Ini adalah dasar dari ekonomi awan (\textit{cloud computing}) yang kita gunakan hari ini. Keberhasilan Corbató mengingatkan kita bahwa arsitektur yang adil adalah arsitektur yang berkelanjutan.
-\end{description}
+Berbeda dengan mainframe IBM 7090 yang membutuhkan satu ruangan penuh dan biaya jutaan dolar, PDP-1 "hanya" seukuran tiga lemari es dan berharga \$120.000 (murah untuk ukuran masa itu). Tapi yang paling penting: ia dilengkapi dengan \textit{keyboard} dan layar \textit{CRT} (Cathode Ray Tube). Anda bisa duduk di depannya, menyalakannya, dan langsung mengetik.
 
-\section{1962: Jaringan Antar Galaksi dan Interaksi Visual}
+Di MIT, sekelompok mahasiswa yang menyebut diri mereka sebagai "hackers" (dalam arti positif: pengulik yang antusias) jatuh cinta pada mesin ini. Mereka tidak menggunakan PDP-1 untuk menghitung lintasan rudal atau sensus penduduk. Mereka menggunakannya untuk bersenang-senang.
 
-Tahun ini, J.C.R. Licklider merumuskan visi tentang jaringan global, sementara Ivan Sutherland membangun alat desain visual pertama.
+Pada tahun 1962, Steve Russell, Martin Graetz, dan Wayne Wiitanen menciptakan \textbf{Spacewar!}.
+Ini adalah video game digital pertama yang sesungguhnya. Dua pesawat ruang angkasa ("The Wedge" dan "The Needle") saling menembak di layar CRT vektor, dipengaruhi oleh gravitasi bintang pusat.
 
-\begin{description}
-    \item[The Intergalactic Computer Network] \textit{Saat pertama kali dibuat} sebagai sebuah memo di ARPA, visi Licklider tentang jaringan komputer yang saling terhubung secara global dianggap sebagai fantasi sains. Ia membayangkan sebuah dunia di mana informasi dan program dapat diakses secara instan dari mana saja.
+Bayangkan betapa revolusionernya ini: Komputer, alat militer yang sangat serius, digunakan untuk \textit{bermain}.
+Di balik layar, kode \textit{Spacewar!} adalah pengajaran agung tentang optimasi. Russell dan timnya harus menulis subrutin sinus/kosinus yang sangat efisien agar gerakan pesawat terasa mulus secara \textit{real-time}. Mereka meretas perangkat keras untuk mendapatkan performa maksimal.
 
-    \textit{Pada saat buku ini dibuat}, visi Licklider telah terwujud sebagai Internet. Sebagai Artisan, Licklider mengajari kita tentang kekuatan visi strategis. Ia tidak membangun internet dengan tangannya sendiri, tapi ia membangun "imajinasi kolektif" yang menggerakkan pendanaan dan riset selama dekade berikutnya. Inilah *The Art of Influence* di level tertinggi: menanamkan benih pemikiran yang akan tumbuh menjadi pohon dunia.
+\textit{Spacewar!} menyebar ke setiap instalasi PDP-1 di seluruh Amerika. Ia membuktikan bahwa komputer bisa menjadi media ekspresi yang menyenangkan. Bagi Artisan, ini adalah momen kelahiran \textit{Hacker Culture}: semangat untuk mengeksplorasi batas kemampuan mesin demi kesenangan murni penciptaan, bukan sekadar utilitas bisnis.
 
-    \item[Sketchpad (Ivan Sutherland)] \textit{Saat pertama kali dibuat} sebagai tesis doktoralnya, Sketchpad adalah program pertama yang memungkinkan manusia berinteraksi dengan komputer melalui grafik dan pena cahaya (\textit{light pen}). Ia memperkenalkan konsep objek (\textit{objects}) dan properti (\textit{properties}) dalam grafik komputer.
+\section{1963 -- 1965: Memecah Waktu dan Menaklukkan Kompleksitas}
 
-    \textit{Pada saat buku ini dibuat}, setiap CAD dan perangkat lunak desain grafis adalah keturunan langsung dari Sketchpad. Sebagai Artisan, Sutherland mengajarkan kita bahwa antarmuka visual adalah jembatan paling kuat untuk mengekspresikan niat manusia ke dalam mesin. Keindahan teknis Sketchpad terletak pada kemampuannya untuk mengubah abstraksi koordinat menjadi bentuk yang bisa kita manipulasi secara intuitif.
-\end{description}
+Seiring dengan meningkatnya permintaan akan akses komputer, model "satu orang, satu mesin" (seperti pada PDP-1) menjadi tidak ekonomis, sementara model "antrian batch" (seperti pada IBM) terlalu lambat untuk inovasi. Dunia membutuhkan jalan tengah.
 
-\section{1963: Bahasa Universal dan Alat Navigasi (ASCII \& Mouse)}
+Jawabannya adalah \textbf{Time-Sharing}.
+Konsep ini dikembangkan secara serius di MIT melalui proyek \textbf{CTSS} (\textit{Compatible Time-Sharing System}) yang dipimpin oleh Fernando Corbató. Idenya brilian: Komputer sangat cepat, sedangkan manusia sangat lambat (mengetik mungkin hanya 2 karakter per detik). Di antara jeda ketukan tombol manusia, prosesor komputer sebenarnya "menganggur" selama jutaan siklus.
 
-Dunia komputasi mulai menstandarisasi pertukaran data, sementara alat navigasi baru mulai dipatenkan.
+Mengapa tidak memanfaatkan waktu nganggur itu untuk melayani orang lain?
+Dalam sistem \textit{Time-Sharing}, sebuah komputer melayani puluhan pengguna secara bergantian dengan sangat cepat. Setiap pengguna merasa seolah-olah mereka memiliki mesin itu untuk diri mereka sendiri, padahal mesin sedang melompat (\textit{context switching}) dari satu terminal ke terminal lain dalam hitungan milidetik.
 
-\begin{description}
-    \item[ASCII (American Standard Code for Information Interchange)] \textit{Saat pertama kali dibuat}, ASCII bertujuan untuk mengakhiri kekacauan kode karakter yang berbeda-beda di setiap produsen mesin. Ia memberikan kode numerik standar untuk huruf, angka, dan simbol kontrol.
+Untuk memungkinkan ini, kita membutuhkan evolusi besar dalam perangkat lunak dan perangkat keras. Kita membutuhkan \textbf{Multiprogramming} (menjalankan banyak program di memori sekaligus) dan \textbf{Memory Protection} (mencegah program User A menimpa memori User B).
 
-    \textit{Pada saat buku ini dibuat}, ASCII tetap menjadi standar dasar pertukaran teks di seluruh dunia digital. Sebagai Artisan, kita belajar bahwa standarisasi adalah bentuk pengaruh yang paling stabil. Dengan menyetujui "bahasa pertukaran" yang sederhana, kita memungkinkan sistem-sistem yang berbeda untuk saling memahami. ASCII adalah fondasi dari komunikasi global kita.
+Pada tahun 1964, IBM, raksasa yang awalnya tidur, terbangun. Mereka melakukan taruhan terbesar dalam sejarah bisnis korporat (\$5 Miliar kala itu) untuk menciptakan \textbf{IBM System/360}.
+Sebelum 360, setiap model komputer IBM memiliki set instruksi yang berbeda. Jika Anda mengganti mesin lama dengan yang baru, Anda harus menulis ulang semua kode Anda.
+System/360 mengubah segalanya. Ia memperkenalkan konsep \textbf{Arsitektur Set Instruksi (ISA)} yang kompatibel ke belakang. Kode yang ditulis untuk Model 30 yang kecil bisa berjalan tanpa perubahan di Model 75 yang raksasa.
 
-    \item[The Mouse Patent (Douglas Engelbart)] \textit{Saat pertama kali dibuat} di SRI, prototipe mouse pertama adalah kotak kayu kecil dengan dua roda logam. Patennya menyebutnya sebagai "Indikator Posisi X-Y untuk Sistem Tampilan".
+Ini adalah kelahiran konsep "Kompatibilitas Software".
+Fred Brooks, manajer proyek System/360, kemudian menulis buku legendaris \textit{"The Mythical Man-Month"} berdasarkan pengalamannya mengelola proyek raksasa ini (dan sistem operasinya yang terkenal rumit, OS/360). Ia mengajarkan pelajaran abadi bagi setiap Artisan manajer proyek: "Menambahkan tenaga kerja ke proyek perangkat lunak yang terlambat hanya akan membuatnya semakin terlambat."
 
-    \textit{Pada saat buku ini dibuat}, mouse telah menjadi bagian integral dari cara kita berinteraksi dengan komputer selama hampir 40 tahun (sebelum layar sentuh mengambil alih sebagian perannya). Sebagai Artisan, Engelbart mengajari kita tentang desain yang berorientasi pada manusia. Ia melihat mouse bukan sebagai perangkat tambahan, tetapi sebagai ekstensi dari niat manusia. Pengaruhnya bertahan karena ia menyentuh cara fisik manusia berinteraksi dengan dunia digital.
-\end{description}
+Sementara dunia korporat sibuk dengan 360, di Dartmouth College, John Kemeny dan Thomas Kurtz memiliki misi yang lebih demokratis. Mereka percaya bahwa komputer harus bisa diakses oleh mahasiswa non-teknik. FORTRAN terlalu rumit. Assembly terlalu menakutkan.
+Pada tahun 1964, mereka menciptakan \textbf{BASIC} (\textit{Beginner's All-purpose Symbolic Instruction Code}).
 
-\section{1964: Standarisasi Arsitektur dan Bahasa Rakyat (IBM S/360 \& BASIC)}
+BASIC dirancang untuk menjadi ramah.
+\texttt{10 PRINT "HELLO WORLD"}
+\texttt{20 GOTO 10}
+Dua baris kode ini telah menjadi pintu gerbang bagi jutaan programmer di dekade-dekade berikutnya (termasuk Bill Gates dan Elon Musk). BASIC mungkin tidak efisien, dan strukturnya yang penuh `GOTO` sering dikritik oleh ilmuwan komputer (seperti Edsger Dijkstra), tetapi ia memiliki satu kualitas Artisan yang tak ternilai: \textbf{Aksesibilitas}. Ia menurunkan tangga bagi orang biasa untuk memanjat menara gading komputasi.
 
-Tahun ini menandai kelahiran keluarga komputer pertama yang memiliki kompatibilitas perangkat lunak, serta bahasa yang membawa pemrograman ke massa.
+Di tahun 1965, Gordon Moore dari Fairchild Semiconductor (sebelum mendirikan Intel) mengamati sebuah pola: jumlah transistor dalam sirkuit terpadu (IC) berlipat ganda setiap tahun (kemudian direvisi menjadi setiap 2 tahun), sementara biayanya tetap.
+Ini adalah \textbf{Hukum Moore}.
+Hukum ini bukan hukum fisika; ia adalah \textit{Self-Fulfilling Prophecy} industri. Ia menjadi metronom yang mengatur ritme inovasi selama 50 tahun ke depan, menjanjikan bahwa komputer akan selalu menjadi lebih cepat, lebih kecil, dan lebih murah. Bagi Artisan, Hukum Moore adalah janji bahwa batasan perangkat keras hari ini akan hilang esok hari, jadi jangan takut untuk memimpikan perangkat lunak yang "berat".
 
-\begin{description}
-    \item[IBM System/360] \textit{Saat pertama kali dibuat}, S/360 adalah taruhan sebesar \$5 miliar dari IBM untuk menciptakan satu arsitektur yang bisa mencakup segala hal, mulai dari kebutuhan bisnis hingga sains. Ia menggunakan teknologi *Solid Logic Technology* (SLT)—sebuah perantara antara sirkuit diskrit dan biner terintegrasi penuh. Yang paling revolusioner adalah pengembangan OS/360, sistem operasi yang sangat ambisius sehingga melahirkan buku klasik Fred Brooks, *The Mythical Man-Month*. Brooks mengajarkan kita bahwa menambah tenaga manusia ke proyek yang terlambat justru akan membuatnya semakin terlambat.
+\section{1966 -- 1968: The Mother of All Demos dan Jaringan Antargalaksi}
 
-    \textit{Pada saat buku ini dibuat}, konsep kompatibilitas mundur (\textit{backward compatibility}) dan satu arsitektur yang konsisten adalah apa yang membuat sistem seperti x86 bertahan begitu lama. Sebagai Artisan, S/360 mengajarkan kita tentang pentingnya integritas arsitektur. Pengaruh yang masif hanya bisa dicapai bila kita membangun fondasi yang konsisten di berbagai kapasitas. IBM mengajari kita bahwa keteraturan adalah kunci dari dominasi industri, namun kompleksitas manajemen yang berlebihan adalah risiko terbesar kita.
+Puncak dari visi Licklider tentang simbiosis manusia-komputer terjadi pada sore hari tanggal 9 Desember 1968 di San Francisco.
+Acara: Fall Joint Computer Conference.
+Pembicara: \textbf{Douglas Engelbart} dari Stanford Research Institute (SRI).
 
-    \item[BASIC (Beginner's All-purpose Symbolic Instruction Code)] \textit{Saat pertama kali dibuat} di Dartmouth College oleh John Kemeny dan Thomas Kurtz, BASIC dirancang agar mahasiswa non-tekno bisa menggunakan komputer. Ia sederhana, interaktif, dan mudah dipelajari.
+Selama 90 menit, Engelbart mendemonstrasikan sebuah sistem bernama \textbf{oN-Line System (NLS)}.
+Apa yang ia tunjukkan hari itu membuat para hadirin ternganga. Ingat, saat itu cara umum berinteraksi dengan komputer adalah kartu punch atau baris perintah teletype.
+Engelbart menunjukkan:
+\begin{itemize}
+    \item Sebuah kotak kayu kecil dengan roda di bawahnya (Mouse).
+    \item Layar yang dibagi menjadi beberapa jendela (Windows).
+    \item Teks yang bisa diklik untuk menuju ke halaman lain (Hypertext).
+    \item Kolaborasi dokumen secara \textit{real-time} dengan video dan audio (Video Conferencing/Google Docs).
+    \item Pengeditan teks yang dinamis (Word Processing).
+\end{itemize}
 
-    \textit{Pada saat buku ini dibuat}, kita melihat BASIC sebagai gerbang masuk bagi jutaan programmer di seluruh dunia selama dekade 1970-an dan 80-an. Sebagai Artisan, BASIC mengajari kita tentang kekuatan kesederhanaan. Terkadang, pengaruh terbesar bukan datang dari bahasa yang paling kuat, tapi dari bahasa yang paling mudah dipahami. BASIC meruntuhkan dinding antara "elit komputer" dan masyarakat umum, memulai revolusi literasi digital yang kita nikmati hari ini.
-\end{description}
+Demo ini kemudian dikenal sebagai \textbf{"The Mother of All Demos"}.
+Engelbart tidak sedang mempresentasikan produk jualan. Ia sedang mempresentasikan sebuah filosofi: \textbf{Augmentasi Kecerdasan Manusia}.
+Ia percaya bahwa masalah dunia menjadi semakin kompleks, dan satu-satunya cara manusia bisa menyelesaikannya adalah dengan meningkatkan (augment) kemampuan intelektual kolektif kita melalui alat bantu teknologi.
 
-\section{1965: Hukum Moore dan Komputasi untuk Semua (PDP-8)}
+Bagi Artisan 2026, Engelbart adalah Santo Pelindung Interaksi (\textit{Patron Saint of Interaction}). Semua yang kita gunakan hari ini—mouse, GUI, link, kolaborasi cloud—semuanya ditarik dari visi Engelbart tahun 1968.
 
-Laju pertumbuhan teknologi mendapatkan hukumnya, sementara komputer pertama yang benar-benar bisa "dibeli" oleh laboratorium kecil mulai dipasarkan.
+Sementara itu, di kantor ARPA, penerus Licklider, Bob Taylor dan Lawrence Roberts, sedang bergumul dengan masalah praktis. Mereka mendanai komputer-komputer hebat di berbagai universitas (MIT, Utah, UCLA, SRI), tetapi komputer-komputer ini terisolasi. Jika Anda ingin menggunakan komputer di Utah, Anda harus pergi ke Utah.
 
-\begin{description}
-    \item[Moore's Law (Gordon Moore)] \textit{Saat pertama kali dibuat} sebagai sebuah pengamatan empiris dalam majalah *Electronics*, Gordon Moore memprediksi bahwa jumlah komponen dalam sirkuit terintegrasi akan berlipat ganda setiap tahun (kemudian direvisi menjadi dua tahun). Ini bukan sekadar prediksi teknis, tapi menjadi ramalan yang mengatur seluruh strategi industri semikonduktor.
+Mereka membutuhkan cara untuk menghubungkan mesin-mesin ini. Mereka membutuhkan "Jaringan Komputer Antargalaksi" (\textit{Intergalactic Computer Network}), istilah bercanda Licklider yang menjadi serius.
+Tantangannya: Jaringan telepon yang ada (\textit{Circuit Switching}) tidak efisien untuk data komputer yang bersifat "meledak-ledak" (\textit{bursty}). Jika Anda membangun koneksi sirkuit, jalur itu didedikasikan untuk Anda meskipun Anda diam. Itu mahal.
 
-    \textit{Pada saat buku ini dibuat}, Hukum Moore telah menjadi mesin penggerak peradaban digital selama 60 tahun. Sebagai Artisan, kita harus menghargai disiplin pertumbuhan ini. Gordon Moore mengajari kita tentang "skalabilitas eksponensial". Kita harus membangun sistem yang tidak hanya bekerja untuk hari ini, tapi siap untuk menghadapi lonjakan daya yang sudah diprediksi di masa depan. Pengaruh adalah tentang memahami ritme kemajuan dan menari bersamanya.
+Solusinya datang dari tiga pemikir terpisah: Paul Baran (RAND), Donald Davies (NPL Inggris), dan Leonard Kleinrock (UCLA). Konsepnya adalah \textbf{Packet Switching}.
+Pecah data menjadi paket-paket kecil. Beri label alamat tujuan pada setiap paket. Lempar paket-paket itu ke jaringan seperti surat di kantor pos. Biarkan setiap \textit{router} (waktu itu disebut IMP - \textit{Interface Message Processor}) memutuskan jalur mana yang terbaik untuk setiap paket. Di tujuan, rakit kembali paket-paket itu.
 
-    \item[DEC PDP-8] \textit{Saat pertama kali dibuat}, PDP-8 adalah minikomputer pertama yang sukses secara komersial massal. Ia seukuran lemari es kecil dan harganya cukup terjangkau sehingga departemen universitas atau bisnis kecil bisa memilikinya sendiri tanpa harus berbagi dengan pusat data besar.
+Ini adalah ide yang radikal. AT\&T (perusahaan telepon raksasa) menolaknya dan mengatakan itu tidak akan berhasil. Tapi para "anak muda" di ARPA tidak peduli. Mereka mengontrak BBN (Bolt, Beranek and Newman) untuk membangun IMP tersebut.
 
-    \textit{Pada saat buku ini dibuat}, kita melihat PDP-8 sebagai awal dari desentralisasi komputasi. Sebagai Artisan, PDP-8 mengajarkan kita tentang demokratisasi alat. Ketika alat yang kuat jatuh ke tangan lebih banyak orang, inovasi tidak lagi menjadi monopoli korporasi besar. Pengaruh sejati menyebar melalui fragmentasi dan aksesibilitas.
-\end{description}
+\section{1969: Tahun Keajaiban - Bulan, Kabel, dan UNIX}
 
-\section{1966: Komunikasi Paket dan Akar Internet}
+Tahun terakhir dekade ini, 1969, mungkin adalah tahun paling ajaib dalam sejarah teknologi dan kemanusiaan. Tiga peristiwa monumental terjadi hampir bersamaan.
 
-Di saat dunia fisik sedang sibuk dengan gejolak sosial, dunia digital mulai merumuskan cara berkomunikasi yang tahan banting.
+\textbf{Pertama, Apollo 11.}
+Pada bulan Juli, Neil Armstrong dan Buzz Aldrin mendarat di Bulan. Di balik keberhasilan ini terdapat \textbf{Apollo Guidance Computer (AGC)}. Dibuat oleh MIT Instrumentation Lab, ini adalah komputer portabel pertama yang menggunakan \textit{Integrated Circuits} (IC). Dengan memori hanya 72KB (ROM) dan 4KB (RAM), perangkat lunak yang ditulis oleh tim Margaret Hamilton ini harus menavigasi pesawat ruang angkasa sejauh 240.000 mil, mendarat dengan presisi, dan kembali.
+Pelajaran Artisan dari AGC adalah \textbf{Keandalan Ekstrem} dan \textbf{Prioritas}. Saat alarm kesalahan "1202" berbunyi tepat sebelum pendaratan (karena memori penuh), sistem operasi AGC cukup pintar untuk membuang tugas prioritas rendah (seperti radar) dan fokus pada tugas prioritas tinggi (pendaratan). \textit{Graceful degradation} menyelamatkan misi.
 
-\begin{description}
-    \item[Packet Switching (Donald Davies \& Paul Baran)] \textit{Saat pertama kali dibuat} secara independen di Inggris dan AS, konsep pensakelar paket (\textit{packet switching}) mengusulkan untuk membagi pesan menjadi potongan-potongan kecil yang dapat mengambil jalur berbeda menuju tujuan. Ini adalah antitesis dari jaringan telepon yang kaku.
+\textbf{Kedua, ARPANET Online.}
+Pada 29 Oktober, dari sebuah ruangan di UCLA, mahasiswa Charley Kline mencoba login ke komputer di Stanford Research Institute (SRI). Ia mengetik "L". Telepon berdering, "Dapat L?". "Ya."
+Ia mengetik "O". "Dapat O?". "Ya."
+Ia mengetik "G". Sistem \textit{crash}.
+Pesan pertama di internet adalah "LO". (Mungkin singkatan profetik untuk \textit{Lo and Behold!}).
+Meskipun \textit{crash}, koneksi pertama ini menandai lahirnya jaringan yang kelak menjadi Internet. Empat simpul pertama (UCLA, SRI, UCSB, Utah) terhubung di akhir tahun. Dunia tidak lagi terdiri dari pulau-pulau data yang terisolasi.
 
-    \textit{Pada saat buku ini dibuat}, setiap paket data yang Anda terima saat membaca buku ini adalah bukti kejeniusan Baran dan Davies. Sebagai Artisan, kita belajar tentang ketahanan (\textit{resiliency}). Dengan merancang sistem yang bisa beradaptasi dengan kerusakan dan perubahan jalur, kita menciptakan struktur yang abadi. Pengaruh tidak datang dari kekakuan sirkuit, tapi dari kelenturan arsitektur yang bisa menyesuaikan diri dengan kondisi medan.
-\end{description}
+\textbf{Ketiga, Kelahiran UNIX.}
+Di Bell Labs, Ken Thompson, Dennis Ritchie, dan Rudd Canaday merasa frustrasi. Proyek sistem operasi raksasa mereka sebelumnya, Multics (bersama MIT dan GE), gagal karena terlalu ambisius dan rumit. Bell Labs menarik diri.
+Kehilangan akses ke mainan Multics yang canggih (dan game \textit{Space Travel} favoritnya), Ken Thompson menemukan sebuah PDP-7 tua yang tidak terpakai.
+Ia memutuskan untuk menulis sistem operasi sendiri. Tapi kali ini, filosofinya berbeda dari Multics. Alih-alih sistem raksasa yang melakukan segalanya, ia menginginkan sistem yang kecil, sederhana, dan elegan.
+Ia membangun sistem file hierarkis. Ia membangun konsep proses. Ia membangun shell.
+Brian Kernighan, rekannya, menyebutnya \textbf{UNIX} (pelesetan dari Multics—\textit{Uni} vs \textit{Multi}).
 
-\section{1967: Hypertext dan Smalltalk Roots}
+UNIX bukanlah proyek resmi. Ia adalah proyek "bawah tanah" (`skunkworks`).
+Tanpa mereka sadari, mereka sedang membangun sistem operasi paling berpengaruh dalam sejarah. Filosofi UNIX—\textit{Do one thing and do it well}, \textit{Everything is a file}, \textit{Shell pipes}—menjadi kitab suci bagi Artisan sistem selama 50 tahun ke depan. Linux, macOS, Android, iOS, dan seluruh server cloud hari ini adalah keturunan langsung atau spiritual dari peretasan Thompson di PDP-7 tua itu.
 
-Benih-benih cara kita mengelola pengetahuan dan memprogram secara berorientasi objek mulai tumbuh.
+\section{Refleksi Dekade: Memanusiakan Mesin}
 
-\begin{description}
-    \item[Hypertext (Andries van Dam \& Ted Nelson)] \textit{Saat pertama kali dibuat} di Brown University, sistem *Hypertext Editing System* adalah salah satu implementasi pertama dari ide Ted Nelson tentang teks yang saling terhubung secara non-linear.
+Dekade 1960-an ditutup dengan perubahan paradigma yang total.
+Di awal dekade, manusia mengantri untuk melayani mesin. Di akhir dekade, mesin mulai melayani manusia di meja mereka sendiri.
 
-    \textit{Pada saat buku ini dibuat}, web yang kita jelajahi adalah realisasi dari Hypertext. Sebagai Artisan, kita belajar bahwa struktur informasi menentukan cara kita berpikir. Dengan memberikan pengaruh pada bagaimana data saling terhubung, kita memberikan pengaruh pada bagaimana manusia memahami pengetahuan. Sejarah IT adalah sejarah penghancuran linearitas demi konektivitas.
-\end{description}
+Para Artisan tahun 60-an—Licklider, Engelbart, tim ARPANET, dan peretas UNIX—mewariskan sesuatu yang lebih berharga daripada kode: mereka mewariskan \textbf{Semangat Kebebasan}.
+Mereka menolak didikte oleh keterbatasan fisik mesin mainframe. Mereka menolak otoritas sentral yang menentukan kapan dan bagaimana mereka boleh menghitung.
 
-\section{1968: Ibu dari Segala Demo (The Mother of All Demos)}
-
-Tahun ini mencatat momen paling berpengaruh dalam sejarah antarmuka manusia-komputer yang dilakukan oleh Douglas Engelbart.
-
-\begin{description}
-    \item[The Mother of All Demos] \textit{Saat pertama kali dibuat} sebagai demonstrasi selama 90 menit di San Francisco, Engelbart menunjukkan untuk pertama kalinya: *mouse*, *windows*, *hypertext*, pemrosesan kata grafis, dan konferensi video. Dunia saat itu belum siap untuk memahami apa yang mereka lihat.
-
-    \textit{Pada saat buku ini dibuat}, kita menyadari bahwa Engelbart telah "mengimpor masa depan" ke tahun 1968. Sebagai Artisan, momen ini adalah lambang dari *The Art of Influence* yang berani. Ia tidak hanya membangun fitur; ia membangun visi tentang bagaimana teknologi bisa meningkatkan kecerdasan manusia (\textit{Augmenting Human Intellect}). Pelajarannya adalah: jangan takut untuk menjadi "terlalu maju" dari zaman Anda. Jika visi Anda benar, dunia akan mengejarnya, meskipun butuh waktu 20 tahun.
-\end{description}
-
-\section{1969: Bulan, UNIX, dan Lahirnya ARPANET}
-
-Dekade ini ditutup dengan tiga pencapaian manusia yang paling monumental dalam sejarah teknologi.
-
-\begin{description}
-    \item[Apollo 11 Guidance Computer (AGC)] \textit{Saat pertama kali dibuat} oleh MIT Instrumentation Lab, AGC adalah salah satu komputer pertama yang menggunakan sirkuit terintegrasi silikon. Ia harus sangat handal dan ringan untuk bisa membawa manusia ke bulan dan kembali dengan selamat.
-
-    \textit{Pada saat buku ini dibuat}, kita melihat AGC sebagai puncak dari keandalan sistem kritis (\textit{mission-critical systems}). Sebagai Artisan, AGC mengajari kita tentang tanggung jawab. Di tahun 2026, kita mungkin tidak selalu mengirim manusia ke bulan, tapi kode kita mengelola kehidupan, uang, dan kesehatan orang lain. Kedisiplinan AGC adalah standar emas bagi setiap pengrajin kode.
-
-    \item[The Birth of UNIX (Ken Thompson \& Dennis Ritchie)] \textit{Saat pertama kali dibuat} di sebuah mesin PDP-7 bekas di Bell Labs, UNIX lahir dari keinginan untuk memiliki sistem operasi yang sederhana, elegan, dan bisa dipindahkan (\textit{portable}). Thompson dan Ritchie tidak mencari kompleksitas, mereka mencari kejelasan.
-
-    \textit{Pada saat buku ini dibuat}, setiap server Linux, Mac, dan hampir semua infrastruktur internet berjalan di atas filosofi UNIX. Sebagai Artisan, UNIX adalah kitab suci kita. Pelajarannya abadi: "Lakukan satu hal, dan lakukan dengan baik." Pengaruh UNIX datang dari kesederhanaannya yang mematikan. Ia mengarahkan dunia sistem operasi bukan dengan paksa, tapi dengan menjadi standar yang terlalu benar untuk diabaikan.
-
-    \item[ARPANET (The First Message)] \textit{Saat pertama kali dibuat}, ARPANET menghubungkan UCLA dan SRI. Pesan pertama yang dikirim adalah "LO" (dari kata "LOGIN", sebelum sistem tersebut hancur). Ini adalah momen "Big Bang" bagi internet.
-
-    \textit{Pada saat buku ini dibuat}, kita hidup di dalam ARPANET yang telah tumbuh menjadi entitas global yang menyatukan seluruh umat manusia. Sebagai Artisan, kita belajar bahwa permulaan yang kecil dan bahkan "gagal" di awal (seperti pesan "LO" tersebut) bisa menjadi awal dari sesuatu yang mengubah galaksi. Pengaruh sejati membutuhkan kesabaran untuk tumbuh dari beberapa simpul menjadi jaring-jaring yang tak terbatas.
-\end{description}
-
-\section{Atmosfer Era: Revolusi di Setiap Bit}
-
-Dekade 1960-an adalah periode perlawanan terhadap kemapanan. Budaya tandingan (counter-culture) memengaruhi teknologi secara mendalam. Komputer yang tadinya adalah alat otoritas (pemerintah dan korporasi besar) mulai "direbut" oleh para peretas idealis yang ingin membebaskan informasi.
-
-\textit{Saat pertama kali dibuat}, suasana ini melahirkan etika peretas (*hacker ethic*) pertama di lab-lab MIT. Ada rasa urgensi untuk membuat sistem yang terbuka dan bisa diakses secara kolektif. Ini adalah dekade di mana "personalitas" mulai masuk ke dalam komputasi. Kita tidak lagi hanya menjalankan tugas, kita sedang berdialog dengan mesin.
-
-\textit{Pada saat buku ini dibuat di tahun 2026}, kita melihat gema yang sama dalam gerakan perangkat lunak sumber terbuka (*open source*) dan desentralisasi web. Sebagai Artisan, kita harus memahami bahwa teknologi selalu membawa muatan budaya. Pengaruh kita sebagai Artisan bukan hanya teknis, tapi moral. 1960-an mengajari kita bahwa inovasi yang paling bertahan lama adalah inovasi yang memberikan kekuatan kepada individu, bukan hanya kepada institusi.
-
-\section{Disiplin Sang Artisan: Kejelasan di Atas Kompleksitas}
-
-Pelajaran terpenting dari dekade ini bagi seorang Artisan adalah "Filosofi UNIX": Kejelasan adalah segalanya.
-
-\textit{Saat pertama kali dibuat}, di tengah tren sistem operasi raksasa yang gemuk dan kompleks (seperti Multics), Ken Thompson dan Dennis Ritchie memilih jalur asketik. Mereka membuang semua yang tidak perlu. Disiplin untuk berkata "tidak" pada fitur tambahan demi menjaga kesucian desain adalah apa yang membuat UNIX abadi.
-
-\textit{Pada saat buku ini dibuat}, kita seringkali tergoda untuk menambahkan lapisan-lapisan abstraksi yang tidak perlu atau mengikuti tren *framework* yang berubah setiap musim. Sebagai Artisan, kita harus kembali ke disiplin 1960-an. Pengaruh yang kokoh dibangun di atas fondasi yang sederhana dan bisa diprediksi. "Keep It Simple, Stupid" bukan sekadar slogan, tapi jalan hidup Artisan untuk memastikan karya kita tetap bisa dipahami dan dikembangkan oleh generasi berikutnya. Kejelasan adalah bentuk tertinggi dari rasa hormat kita kepada sesama Artisan.
-
-\section{Refleksi Dekade: Menuju Cakrawala Baru}
-
-Dekade 1960-an ditutup dengan langkah kaki di bulan dan simpul pertama internet. Manusia telah membuktikan bahwa mereka bisa melampaui batas fisik planet ini melalui bantuan mesin logika.
-
-\begin{description}
-    \item[Warisan Sang Artisan] \textit{Saat pertama kali dibuat}, dekade ini memberikan kita Internet (ARPANET), UNIX, Mouse, Grafik Komputer, dan Moore's Law. Ini adalah "Zaman Keemasan" inovasi konseptual.
-
-    \textit{Pada saat buku ini dibuat}, kita menyadari bahwa setiap klik mouse, setiap paket data, dan setiap perintah terminal kita hari ini adalah warisan dari mimpi-mimpi liar di tahun 1960-an. Sebagai Artisan, kita tidak hanya mewarisi teknologi mereka, tapi juga semangat pemberontakan mereka terhadap keterbatasan. Kita menggunakan pengaruh kita untuk terus mendorong batas-batasan apa yang mungkin, sambil tetap setia pada keanggunan logika yang telah mereka letakkan. Kita adalah anak-anak revolusi 1960-an, yang sedang menulis bab baru di era AI.
-\end{description}
+Mereka meretas waktu (Time-Sharing), mereka meretas ruang (ARPANET), dan mereka meretas birokrasi (UNIX).
+Sebagai Artisan 2026, setiap kali Anda membuka terminal, setiap kali Anda menggunakan mouse, dan setiap kali Anda terhubung ke Wi-Fi, Anda sedang menikmati buah dari pemberontakan intelektual tahun 1960-an. Tugas kita adalah menjaga semangat itu: bahwa teknologi harus selalu memperluas ("augment") potensi manusia, bukan membatasi atau menggantikannya.
