@@ -1,7 +1,7 @@
 # Build directories
 dist/
 # Allow final artifacts
-!bin/titled-artisans-prince.pdf
+!bin/gelar-sang-artisan.pdf
 
 # LaTeX intermediate files (in root or elsewhere)
 *.aux
@@ -13,7 +13,7 @@ dist/
 *.synctex.gz
 *.pdf
 # Re-include the specific artifact we want (in case *.pdf excluded it)
-!bin/titled-artisans-prince.pdf
+!bin/gelar-sang-artisan.pdf
 *.dvi
 *.bbl
 *.blg
