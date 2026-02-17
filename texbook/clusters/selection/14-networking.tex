@@ -1,0 +1,93 @@
+\chapter{The Nervous System (Networking)}
+
+Jika Database adalah memori, maka Jaringan adalah sistem saraf.
+Aplikasi terdistribusi modern adalah kumpulan organ yang terpisah (frontend di HP user, backend di AWS, database di region lain). Tanpa saraf yang sehat, organ-organ ini tidak bisa berkoordinasi.
+Artisan harus memahami bagaimana data bergerak melalui kabel (atau udara), karena di situlah letak 80\% masalah performa dan keandalan.
+
+\section{Mitos OSI Model vs Realitas TCP/IP}
+
+Di universitas, kita diajarkan \textbf{OSI 7 Layer}. Sangat rapi, sangat akademis.
+Di dunia nyata, kita hanya peduli pada 4 lapisan model \textbf{TCP/IP}:
+\begin{enumerate}
+    \item \textbf{Link}: Kabel ethernet atau WiFi. (Kita jarang menyentuh ini kecuali kita SysAdmin).
+    \item \textbf{IP (Internet Protocol)}: Alamat rumah. Bagaimana paket sampai ke tujuan.
+    \item \textbf{Transport (TCP/UDP)}: Bagaimana paket dikirim. Apakah harus sampai dengan utuh (TCP) atau boleh hilang sebagian (UDP)?
+    \item \textbf{Application (HTTP, DNS, SSH)}: Bahasa yang dimengerti manusia (atau setidaknya developer). \textit{Ini adalah tempat Artisan bekerja.}
+\end{enumerate}
+
+\section{TCP vs UDP: Jaminan vs Kecepatan}
+
+Keputusan paling mendasar di level transport:
+
+\subsection{TCP (Transmission Control Protocol)}
+TCP adalah kurir yang obsesif.
+Ia mengirim paket, lalu menunggu tanda terima (\textit{ACK}). Jika tanda terima tidak datang, ia kirim ulang. Ia memastikan paket urut 1, 2, 3.
+\textbf{Cocok untuk:} Web (HTTP), Email, File Transfer, Database.
+\textbf{Kekurangan:} Lambat di awal (\textit{Handshake} 3 arah). Ada latensi tambahan untuk menjamin urutan ("Head-of-Line Blocking").
+
+\subsection{UDP (User Datagram Protocol)}
+UDP adalah kurir yang melempar paket ke halaman rumah Anda dan langsung pergi.
+Ia tidak peduli apakah paket sampai, hancur, atau hilang.
+\textbf{Cocok untuk:} Streaming Video, Game Online, Voice Call (VoIP).
+Mengapa? Karena di panggilan video, lebih baik gambar sedikit rusak (\textit{glitch}) daripada video berhenti total menunggu paket ulang. \textit{Real-time} lebih penting daripada \textit{Perfect}.
+
+\section{HTTP: Bahasa Universal Web}
+
+Hampir semua yang kita bangun berjalan di atas HTTP. Tapi HTTP berevolusi.
+\begin{itemize}
+    \item \textbf{HTTP/1.1}: Teks biasa. Satu koneksi per request. Boros. (Masih dipakai untuk debugging mudah).
+    \item \textbf{HTTP/2}: Biner. Multiplexing (banyak request dalam satu koneksi TCP). Jauh lebih efisien.
+    \item \textbf{HTTP/3 (QUIC)}: Berjalan di atas UDP! Mengatasi masalah \textit{Head-of-Line Blocking} TCP. Masa depan web yang cepat di jaringan seluler yang tidak stabil.
+\end{itemize}
+
+Artisan harus tahu cara melihat \textit{Header} HTTP. Status code (200 OK, 404 Not Found, 500 Server Error) adalah denyut nadi aplikasi Anda.
+
+\section{API Styles: REST, GraphQL, atau gRPC?}
+
+Bagaimana cara Frontend bicara dengan Backend? Atau Microservice A melapor ke Microservice B?
+
+\subsection{1. REST (Representational State Transfer)}
+\textbf{Filosofi:} Sumber daya (\textit{Resources}) adalah raja.
+Gunakan kata kerja standar HTTP: GET (ambil), POST (buat), PUT (ganti), DELETE (hapus).
+URL merepresentasikan benda: \texttt{/users/123}.
+\textbf{Kelebihan:} Cacheable! Browser dan CDN mengerti cara meng-cache GET request. Sangat mudah didebug (cukup pakai \textit{curl}).
+\textbf{Kekurangan:} \textit{Over-fetching} (mengambil data yang tidak butuh) atau \textit{Under-fetching} (harus request berkali-kali).
+\textbf{Vonis Artisan:} Default terbaik untuk API publik. Sederhana dan universal.
+
+\subsection{2. GraphQL}
+\textbf{Filosofi:} Klien adalah raja.
+Klien meminta persis apa yang mereka butuhkan. "Saya butuh nama user dan judul postingan terakhirnya, tapi tidak butuh alamatnya."
+\textbf{Kelebihan:} Fleksibel untuk Frontend. Satu request untuk semua data.
+\textbf{Kekurangan:} Kompleksitas pindah ke Backend. Masalah \textit{N+1 Query} (satu request GraphQL bisa memicu 1000 query database jika tidak hati-hati). Tidak bisa di-cache semudah REST.
+\textbf{Vonis Artisan:} Bagus untuk aplikasi kompleks dengan banyak relasi data (seperti Facebook), tapi \textit{overkill} untuk blog sederhana.
+
+\subsection{3. gRPC (Remote Procedure Call)}
+\textbf{Filosofi:} Efisiensi mesin adalah raja.
+Menggunakan Protobuf (biner) bukan JSON (teks). Sangat ringkas. Mendukung streaming dua arah.
+\textbf{Kelebihan:} Sangat cepat. Hemat \textit{bandwidth}. Tipe data ketat (\textit{Strongly Typed}) antar layanan.
+\textbf{Kekurangan:} Tidak bisa dibaca manusia. Butuh alat khusus untuk debug. Sulit dipakai langsung di browser.
+\textbf{Vonis Artisan:} Standar emas untuk komunikasi \textit{antar-server} (Microservices). Jangan pakai untuk komunikasi ke browser publik (kecuali pakai gRPC-Web proxy).
+
+\section{Real-Time: WebSockets \& Server-Sent Events}
+
+HTTP itu pasif: Klien tanya, Server jawab.
+Bagaimana jika Server ingin memberi tahu Klien "Ada pesan baru!"?
+
+\subsection{WebSockets}
+Pipa dua arah permanen. Server dan Klien bisa saling kirim data kapan saja.
+\textbf{Gunakan untuk:} Chat apps, Game multiplayer, Kolaborasi dokumen real-time (Figma/Google Docs).
+\textbf{Biaya:} Menjaga koneksi tetap terbuka memakan memori server. Pertimbangkan \textit{scaling}-nya.
+
+\subsection{Server-Sent Events (SSE)}
+Pipa satu arah dari Server ke Klien.
+\textbf{Gunakan untuk:} Notifikasi, Ticker saham, Update skor bola.
+\textbf{Kelebihan:} Lebih ringan daripada WebSockets. Menggunakan HTTP standar. Jika putus, otomatis nyambung lagi.
+
+\section{Kesimpulan: Pilihlah Protokol Sesuai Kebutuhan Percakapan}
+
+Jangan gunakan WebSockets untuk mengambil daftar produk (gunakan REST).
+Jangan gunakan gRPC untuk API publik yang diakses pihak ketiga (gunakan REST/GraphQL).
+Jangan gunakan JSON untuk mengirim data telemetri ribuan kali per detik (gunakan Protobuf/UDP).
+
+Jaringan bukan pipa bodoh. Ia memiliki fisika dan karakteristik. Artisan yang menghormati fisika jaringan akan membangun aplikasi yang terasa \textit{snappy} (responsif) bahkan di koneksi 3G yang buruk.
+Apapun protokolnya, hukum pertama jaringan tetap berlaku: \textbf{Latency is the Killer}. Kurangi jumlah perjalanan pulang-pergi (\textit{Round Trip}), dan aplikasi Anda akan terbang.

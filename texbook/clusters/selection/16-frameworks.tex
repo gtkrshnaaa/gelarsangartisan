@@ -1,0 +1,76 @@
+\chapter{The Cathedral and the Bazaar (Frameworks)}
+
+Jika bahasa pemrograman adalah batu bata, maka \textbf{Framework} adalah cetak biru rumah yang sudah jadi.
+Pertanyaan abadi bagi setiap pengembang:
+"Apakah saya harus membangun dari nol, atau menggunakan kerangka kerja yang membatasi tapi mempercepat?"
+
+Artisan 2026 menghadapi dua kubu filosofi:
+\begin{enumerate}
+    \item \textbf{The Cathedral (Katedral)}: Framework Opiniatif (Opinionated). Segalanya sudah diputuskan. (Rails, Laravel, Django, Spring Boot).
+    \item \textbf{The Bazaar (Pasar)}: Micro-framework. Anda merakit sendiri dari komponen kecil. (Express, Flask, Go Chi, FastAPI).
+\end{enumerate}
+
+\section{The Cathedral: Baterai Sudah Termasuk}
+
+Rails (Ruby), Laravel (PHP), dan Django (Python) menganut filosofi \textbf{"Convention over Configuration"}.
+Mereka berasumsi mereka tahu cara terbaik melakukan sesuatu.
+- Struktur folder? Sudah ditentukan.
+- ORM Database? Sudah ada.
+- Sistem Autentikasi? Tinggal nyalakan.
+- Keamanan (CSRF, XSS)? Otomatis.
+
+\textbf{Kapan Memilih Katedral:}
+Saat Anda membangun \textbf{Produk Bisnis Standar (CRUD)}.
+Toko online, SaaS, Blog, Portal Admin.
+Jangan buang waktu Anda merakit sistem login sendiri. Ribuan orang pintar sudah memecahkannya di framework ini. Fokuslah pada fitur unik bisnis Anda.
+"Bosan" itu bagus. Produktivitas itu seksi.
+
+\textbf{Bahaya Katedral:}
+Magic. Terlalu banyak hal terjadi secara otomatis di balik layar.
+Saat Anda ingin melakukan sesuatu yang \textit{tidak} standar, Anda harus bertarung melawan framework. Ini bisa sangat menyakitkan.
+
+\section{The Bazaar: Kebebasan yang Melelahkan}
+
+Express (Node.js), Flask (Python), dan Go net/http.
+Mereka memberi Anda router HTTP, dan... itu saja.
+Sisanya terserah Anda.
+- Mau database apa? Terserah.
+- Mau struktur folder gimana? Bebas.
+- Mau middleware apa? Cari sendiri di NPM/Pip.
+
+\textbf{Kapan Memilih Pasar:}
+Saat Anda membangun \textbf{Microservices Spesifik} atau \textbf{High-Performance API}.
+Jika Anda hanya butuh endpoint sederhana yang menerima JSON dan memprosesnya dengan cepat, Katedral terlalu berat.
+Pasar memberi Anda kontrol penuh atas setiap byte yang keluar masuk.
+
+\textbf{Bahaya Pasar:}
+\textbf{Decision Fatigue (Kelelahan Keputusan)}.
+Anda menghabiskan 2 minggu pertama proyek hanya untuk memilih library validasi, memilih ORM, memilih logger, dan menyambungkan semuanya.
+Setiap proyek Express terlihat berbeda dari proyek Express lainnya karena tidak ada standar.
+Ini disebut \textit{Spaghetti Code} dalam skala arsitektur.
+
+\section{Jebakan Ketergantungan (Framework Lock-in)}
+
+Framework datang dan pergi.
+Ingat \textbf{AngularJS 1.x}? \textbf{Backbone.js}? \textbf{Meteor}?
+Banyak startup mati karena kode mereka terikat mati dengan framework yang ditinggalkan pengembangnya.
+Artisan harus melindungi kode bisnis-nya dari keusangan framework.
+
+Cara terbaik adalah menerapkan prinsip \textbf{Hexagonal Architecture} (Ports and Adapters).
+Jangan biarkan logika bisnis Anda (Core Domain) tahu bahwa ia sedang berjalan di dalam Laravel atau Express.
+Logika bisnis harus murni (Pure PHP/JS/Python classes).
+Framework hanyalah \textbf{Mekanisme Pengiriman} (Delivery Mechanism).
+Controller di framework hanya bertugas menerima request HTTP, memanggil Logika Bisnis murni, lalu mengembalikan respons.
+Jangan menaruh logika bisnis di Controller!
+
+\section{Kesimpulan: Mulailah dengan Katedral}
+
+Saran untuk Artisan 2026:
+Untuk proyek baru, default Anda haruslah \textbf{Katedral (Opinionated Framework)}.
+Next.js (React), Laravel, atau Django.
+Kecepatan iterasi di tahap awal adalah segalanya.
+Katedral memberi Anda kecepatan itu secara gratis.
+Hanya ketika Katedral itu mulai terasa sempit (masalah skala ekstrem atau kebutuhan \textit{custom} yang sangat aneh), barulah Anda mempertimbangkan untuk memecah bagian itu menjadi layanan kecil menggunakan Pasar (\textit{Micro-framework}).
+
+Ingat: Pengguna tidak peduli framework apa yang Anda pakai. Mereka peduli apakah aplikasinya bekerja dan bug-nya cepat diperbaiki.
+Framework yang bagus adalah framework yang membuat Anda melupakan bahwa Anda sedang menggunakannya.

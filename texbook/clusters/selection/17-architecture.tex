@@ -1,0 +1,83 @@
+\chapter{The Shape of the System (Architecture)}
+
+Arsitektur adalah keputusan tentang \textbf{Batas-batas} (\textit{Boundaries}).
+Apa yang dipisahkan? Apa yang disatukan? Bagaimana mereka berbicara satu sama lain?
+Salah satu kesalahan terbesar di industri ini adalah \textbf{Premature Optimization} di level arsitektur.
+"Kita harus pakai Microservices dari hari pertama agar bisa scale seperti Netflix!" seru pendiri startup yang belum punya satu pun pengguna.
+
+Ini adalah resep bencana.
+
+\section{Monolith First: Hukum Gall}
+
+John Gall, dalam bukunya \textit{Systemantics}, merumuskan hukum abadi:
+\begin{quote}
+    "A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system."
+\end{quote}
+
+Artisan memulai dengan \textbf{Monolith}.
+Satu repositori kode. Satu database. Satu proses deployment.
+Kelebihannya tak tertandingi di awal:
+\begin{itemize}
+    \item \textbf{Refactoring Gratis}: Memindahkan kode antar modul hanya butuh \textit{Cut \& Paste} di IDE.
+    \item \textbf{Transaksi ACID}: Mengubah saldo user di tabel A dan mencatat riwayat di tabel B dijamin konsisten oleh database.
+    \item \textbf{Debugging Simpel}: Cukup lihat satu log file.
+\end{itemize}
+
+Jangan malu punya Monolith. Basecamp, Shopify, dan StackOverflow adalah Monolith raksasa yang melayani jutaan pengguna.
+
+\section{The Microservices Tax (Pajak Layanan Mikro)}
+
+Microservices bukan "Cara Terbaik". Microservices adalah \textbf{Trade-off}.
+Anda menukar \textbf{Kompleksitas Kode} (di dalam Monolith) dengan \textbf{Kompleksitas Operasional} (di jaringan).
+
+Saat Anda memecah Monolith menjadi 10 layanan kecil, Anda mendapatkan:
+\begin{enumerate}
+    \item \textbf{Latency Jaringan}: Panggilan fungsi lokal (nanodetik) menjadi panggilan HTTP (milidetik). Lambat 1000x.
+    \item \textbf{Distributed Transactions}: Bagaimana jika Layanan A berhasil mengurangi saldo, tapi Layanan B gagal mencatat pesanan? Uang hilang. Rollback di sistem terdistribusi itu neraka (\textit{Saga Pattern}).
+    \item \textbf{Eventual Consistency}: Data tidak lagi konsisten secara instan. User baru daftar, tapi belum bisa login di layanan lain selama 5 detik.
+    \item \textbf{Tracing}: Debugging satu \textit{request} yang melompat di 5 layanan berbeda butuh alat canggih (Jaeger/Zipkin).
+\end{enumerate}
+
+Jangan membayar pajak ini jika Anda belum memiliki \textbf{Masalah Skala} (tim > 50 orang atau trafik jutaan RPM).
+
+\section{Jebakan Distributed Monolith}
+
+Ini adalah mimpi buruk terburuk.
+Anda memecah sistem menjadi banyak layanan, TAPI mereka masih saling bergantung secara ketat (\textit{Tightly Coupled}).
+Jika Layanan A berubah, Layanan B dan C juga harus di-deploy ulang.
+Anda mendapatkan semua kerugian Microservices (lambat, susah didebug) tanpa mendapatkan keuntungannya (independensi deployment).
+Ini adalah "Monolith Terdistribusi". Hindari dengan segala cara.
+
+\section{The Modular Monolith: Jalan Tengah}
+
+Artisan cerdas memilih \textbf{Modular Monolith}.
+Kode tetap dalam satu repositori (\textit{Monorepo}). Database tetap satu (atau dipisah schema-nya). Deployment tetap satu unit.
+TAPI, struktur kodenya dipisah secara tegas berdasarkan \textbf{Domain Bisnis} (Bounded Contexts).
+- Modul `Order` tidak boleh mengimpor kelas dari Modul `User` secara langsung.
+- Mereka berkomunikasi lewat \textit{Public interface} yang jelas di dalam kode.
+
+Jika suatu hari Modul `Order` menjadi terlalu besar dan butuh skala independen, Anda tinggal "menggergaji" modul itu keluar menjadi Microservice terpisah. Karena batasnya sudah jelas, pemisahannya mudah.
+
+\section{Event-Driven Architecture: Decoupling Sejati}
+
+Cara terbaik untuk menghindari ketergantungan antar-layanan adalah dengan \textbf{Events} (Kejadian).
+Alih-alih Layanan `Order` memanggil Layanan `Email` ("Hei Email, kirim konfirmasi!"), Layanan `Order` cukup berteriak ke dunia: \textbf{"OrderPlaced"} (Pesanan Dibuat!).
+Layanan `Email`, `Inventory`, dan `Analytics` mendengarkan teriakan itu dan bereaksi masing-masing.
+Layanan `Order` tidak tahu (dan tidak peduli) siapa yang mendengarkan.
+
+Keuntungannya:
+\begin{enumerate}
+    \item \textbf{Loose Coupling}: Anda bisa menambah layanan baru (misal: `FraudDetection`) tanpa mengubah kode `Order`.
+    \item \textbf{Resilience}: Jika layanan `Email` mati, event `OrderPlaced` tetap tersimpan di antrian (Kafka/RabbitMQ). Saat `Email` nyala lagi, ia memproses sisa antrian. Tidak ada data hilang.
+\end{enumerate}
+
+\section{Kesimpulan: Evolusi, Bukan Revolusi}
+
+Arsitektur bukan gambar statis di papan tulis. Arsitektur adalah makhluk hidup yang tumbuh.
+Mulai dari Monolith yang bersih (Clean Architecture).
+Tumbuh menjadi Modular Monolith saat tim membesar.
+Pecah menjadi Microservices hanya pada bagian yang "panas" atau butuh teknologi berbeda.
+Gunakan Event-Driven untuk merekatkan bagian-bagian yang terpisah.
+
+Jangan membangun Katedral gotik di hari pertama. Bangunlah pondok kayu yang kokoh, lalu perluas menjadi rumah batu, lalu kastil, seiring kebutuhan penghuninya.
+Itulah jalan Artisan.

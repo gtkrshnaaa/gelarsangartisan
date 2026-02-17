@@ -1,0 +1,121 @@
+\chapter{The Philosophy of Choice}
+
+Di dunia yang ideal, teknologi dipilih berdasarkan kemampuannya untuk memecahkan masalah.
+Di dunia nyata, teknologi sering kali dipilih karena \textit{hype}, rasa takut tertinggal (FOMO), atau keinginan untuk mempercantik resume (Resume Driven Development).
+
+Sebagai seorang Artisan, langkah pertama dan terpenting dalam karir Anda bukanlah belajar \textit{cara} menulis kode, melainkan belajar \textit{cara memilih} apa yang akan ditulis.
+Ini adalah bab tentang \textbf{Penolakan}.
+Seni memilih adalah seni menolak 99\% gangguan yang berkilauan demi 1\% substansi yang abadi.
+
+\section{The Burden of Choice (Beban Pilihan)}
+
+Kita hidup di zaman "Kelimpahan yang Melumpuhkan" (\textit{Paralyzing Abundance}).
+Jika Anda ingin membangun aplikasi web hari ini, Anda dihadapkan pada:
+\begin{itemize}
+    \item 15 Bahasa Pemrograman utama (JS, TS, Python, Go, Rust, dll).
+    \item 50 Framework Frontend (React, Vue, Svelte, Solid, Angular, dll).
+    \item 20 Jenis Database (SQL, NoSQL, Graph, Vector, Time-series).
+    \item 10 Platform Cloud (AWS, GCP, Azure, Vercel, Cloudflare, dll).
+\end{itemize}
+
+Kombinasi permutasi dari pilihan ini mencapai jutaan.
+Seorang pemula melihat ini dan merasa panik. Mereka mencoba mempelajari semuanya. Mereka menjadi "Tutorial Hell Survivor"—tahu sedikit tentang banyak hal, tapi tidak bisa membangun apa pun sampai selesai.
+
+Seorang Artisan melihat ini dan merasa tenang.
+Mengapa? Karena Artisan tahu rahasia yang tidak diketahui pemula: \textbf{Sebagian besar pilihan itu tidak relevan.}
+Sebagian besar teknologi diciptakan bukan untuk memecahkan masalah \textit{Anda}, tetapi untuk memecahkan masalah penciptanya (biasanya perusahaan raksasa seperti Google atau Facebook), atau lebih buruk lagi, untuk menjual konferensi dan kursus.
+
+Prinsip pertama Artisan adalah: \textbf{Abaikan Default Industri. Cari Konteks Spesifik.}
+Hanya karena Google menggunakan Kubernetes, tidak berarti startup Anda dengan 5 pengguna membutuhkannya. Google memecahkan masalah skala planet. Anda memecahkan masalah validasi ide. Alatnya harus berbeda.
+
+\section{Resume Driven Development (RDD)}
+
+Musuh terbesar dari arsitektur yang sehat adalah ego pengembangnya sendiri.
+Kita sering tergoda untuk memilih teknologi yang sedang tren ("Hot new tech") agar kita terlihat relevan di pasar kerja.
+"Mari kita tulis ulang backend ini menggunakan Rust dan gRPC!" seru seorang Senior Engineer.
+"Kenapa?" tanya manajer.
+"Karena... performansinya lebih cepat dan aman memori!" (Alasan sebenarnya: "Karena saya ingin belajar Rust dan menaruhnya di LinkedIn saya").
+
+Ini adalah \textbf{Resume Driven Development (RDD)}.
+RDD adalah kanker. Ia menciptakan sistem yang terlalu rumit (\textit{over-engineered}) yang sulit dipelihara setelah pengembang aslinya pergi.
+Artisan sejati memiliki keberanian untuk menjadi "Membosankan".
+
+\section{In Praise of Boring Technology}
+
+Dan McKinley, mantan insinyur utama di Etsy, menciptakan istilah \textbf{"Boring Technology"} (Teknologi Membosankan).
+Teknologi membosankan adalah teknologi yang:
+\begin{enumerate}
+    \item Sudah ada setidaknya 10 tahun.
+    \item Mode kegagalannya (\textit{failure modes}) sudah dipahami dengan baik.
+    \item Memiliki jawaban untuk setiap pertanyaan di StackOverflow.
+    \item Stabil dan jarang berubah secara drastis.
+\end{enumerate}
+
+Contoh: PostgreSQL, Cron, PHP, Java, Rails, Django.
+Sebaliknya, "Teknologi Menarik" adalah teknologi yang:
+\begin{enumerate}
+    \item Baru rilis versi 0.x atau 1.0.
+    \item Dokumentasinya masih berubah-ubah.
+    \item Mode kegagalannya belum diketahui (Anda adalah kelinci percobaan).
+    \item Anda harus membaca kode sumbernya untuk mengerti cara kerjanya karena tidak ada yang tahu di Google.
+\end{enumerate}
+
+Artisan memilih teknologi membosankan untuk \textbf{Infrastruktur Kritis}.
+Kita menyimpan data pengguna di PostgreSQL, bukan di database NoSQL eksperimental yang baru rilis minggu lalu. Kenapa? Karena jika database itu rusak, bisnis mati. Kita butuh kepastian, bukan petualangan.
+
+Gunakan teknologi menarik hanya di \textbf{Pinggiran} (\textit{Edges}), di mana kegagalan bisa ditoleransi. Eksperimen dengan framework UI baru di halaman admin internal, bukan di halaman checkout utama.
+
+\section{The Innovation Tokens (Token Inovasi)}
+
+Bayangkan setiap proyek dimulai dengan \textbf{3 Token Inovasi}.
+Setiap kali Anda memilih teknologi yang belum pernah Anda gunakan sebelumnya, atau teknologi yang belum stabil, Anda membayar 1 token.
+- Menggunakan database baru? -1 Token.
+- Menggunakan bahasa baru? -1 Token.
+- Menggunakan arsitektur microservices? -1 Token.
+
+Jika Anda kehabisan token (0), Anda tidak boleh lagi memilih teknologi aneh. Anda harus menggunakan pilihan \textit{default} yang membosankan.
+Banyak proyek gagal karena mereka mencoba menghabiskan 10 token sekaligus: "Kita akan membangun AI agent (1) menggunakan Rust (2) di atas Kubernetes (3) dengan database Vector baru (4) dan komunikasi GraphQL (5)..."
+Proyek seperti ini hampir pasti gagal. Bukan karena idenya buruk, tapi karena \textit{kognitif load}-nya (beban pikiran) terlalu berat. Tim sibuk memadamkan api dari 5 teknologi baru sekaligus, sehingga lupa membangun fitur bisnisnya.
+
+Artisan yang bijak menghabiskan Token Inovasi hanya pada \textbf{Masalah Utama} (\textit{Core Domain}).
+Jika Anda membangun startup AI, habiskan token Anda di AI-nya. Gunakan database SQL biasa, server Python biasa, dan frontend standar. Jangan habiskan token Anda untuk mengimprovisasi infrastruktur yang tidak perlu.
+
+\section{The OODA Loop of Selection}
+
+Bagaimana cara Artisan memilih teknologi secara taktis?
+Kita menggunakan siklus \textbf{OODA} (\textit{Observe, Orient, Decide, Act}) yang diadaptasi untuk rekayasa:
+
+\textbf{1. Observe (Amati Masalah)}
+Jangan mulai dari solusi ("Ayo pakai React!"). Mulai dari masalah.
+Apa kendala utamanya?
+- Apakah ini masalah \textit{Throughput} (banyak data)?
+- Apakah ini masalah \textit{Latency} (harus cepat)?
+- Apakah ini masalah \textit{Consistency} (uang tidak boleh hilang)?
+- Apakah ini masalah \textit{Time-to-Market} (harus rilis besok)?
+
+\textbf{2. Orient (Orientasi Pilihan)}
+Petakan opsi yang tersedia.
+Buat daftar kandidat. Baca "Kisah Horor" (\textit{War Stories}) dari orang lain yang menggunakan teknologi tersebut. Jangan hanya membaca testimoni sukses di halaman depan website mereka. Cari artikel dengan judul: "Why we migrated AWAY from X". Itu adalah sumber kebenaran tertinggi.
+
+\textbf{3. Decide (Putuskan dengan Percobaan Kecil)}
+Jangan berdebat di ruang rapat selama berbulan-bulan. Lakukan \textbf{Spike Solution}.
+Ambil waktu 1-2 hari. Cobalah membangun prototipe kotor (\textit{quick and dirty}) menggunakan teknologi tersebut.
+Tujuannya bukan untuk membangun produk, tapi untuk merasakan \textbf{Developer Experience (DX)}.
+Apakah instalasinya mudah? Apakah pesan error-nya jelas? Apakah dokumentasinya membantu?
+Jika dalam 2 jam Anda masih berkutat dengan konfigurasi, itu tanda bahaya. Buang dan cari yang lain.
+
+\textbf{4. Act (Eksekusi dan Komitmen)}
+Setelah memilih, berkomitmenlah.
+Jangan melihat ke belakang (\textit{second-guessing}). "Ah, mungkin seharusnya kita pakai itu..."
+Setiap teknologi punya kekurangan. Rumput tetangga selalu lebih hijau. Tugas Anda adalah \textbf{Membuatnya Berhasil}.
+Dokumentasikan \textit{mengapa} Anda memilihnya (lewat \textit{Architecture Decision Record} - ADR), sehingga orang di masa depan tidak mengutuk Anda.
+
+\section{Kesimpulan: Jadilah Skeptis yang Optimis}
+
+Seorang Artisan adalah seorang \textbf{Skeptis Teknologi}.
+Kita tidak mudah terkesima oleh demo "Hello World" yang mulus. Kita tahu bahwa demo selalu menyembunyikan kerumitan asli.
+Namun, kita juga seorang \textbf{Optimis Solusi}.
+Kita percaya bahwa dengan kombinasi alat yang tepercaya, yang dipilih dengan hati-hati, kita bisa membangun sesuatu yang melampaui zaman.
+
+Pilihlah teknologi seperti Anda memilih pasangan hidup: Bukan yang paling cantik atau paling populer, tetapi yang paling bisa diandalkan saat badai datang, yang paling mengerti bahasa Anda, dan yang bisa tumbuh bersama Anda dalam jangka panjang.
+Di bab-bab selanjutnya, kita akan membedah pilihan-pilihan spesifik ini—Bahasa, Database, Jaringan, dan Infrastruktur—dengan pisau bedah filosofi ini.

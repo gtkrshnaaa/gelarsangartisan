@@ -1,0 +1,84 @@
+\chapter{The Art of Influence}
+
+Menjadi Artisan yang hebat tidak cukup hanya dengan menulis kode yang brilian.
+Jika Anda tidak bisa meyakinkan orang lain untuk menggunakan kode Anda, kode itu akan mati di repositori git yang sepi.
+Teknologi adalah masalah manusia.
+Sebagai Artisan, tugas Anda bukan hanya membangun solusi, tapi \textbf{Menjual Solusi}.
+
+\section{Leadership Without Authority (Memimpin Tanpa Jabatan)}
+
+Banyak pengembang berpikir: "Saya akan bisa mengubah arah tim kalau saya jadi Tech Lead atau Manager."
+Salah.
+Pengaruh sejati tidak datang dari jabatan. Pengaruh datang dari \textbf{Kepercayaan} (\textit{Trust Battery}).
+Setiap kali Anda:
+\begin{itemize}
+    \item Memperbaiki bug kritis di tengah malam -> Baterai Kepercayaan naik.
+    \item Membantu junior memahami konsep sulit -> Baterai naik.
+    \item Mengusulkan teknologi baru yang gagal total -> Baterai turun drastis.
+\end{itemize}
+
+Artisan memimpin dengan \textbf{Kompetensi dan Empati}.
+Jangan menjadi "Arsitek Menara Gading" yang hanya memberi perintah lewat diagram UML. Turunlah ke parit. Tulis kode bersama tim. Rasakan sakitnya sistem CI/CD yang lambat.
+Hanya ketika Anda merasakan sakit mereka, mereka akan mendengarkan solusi Anda.
+
+\section{The Power of the Written Word: RFCs \& Design Docs}
+
+Di Amazon, presentasi PowerPoint dilarang.
+Jeff Bezos memaksa eksekutif menulis memo naratif 6 halaman dan membacanya dalam diam di awal rapat.
+Mengapa? Karena menulis memaksa Anda berpikir jernih. PowerPoint menyembunyikan ide yang dangkal di balik poin-poin singkat (\textit{bullet points}).
+
+Di Google, Uber, dan perusahaan top lainnya, perubahan teknis besar dimulai dengan \textbf{RFC (Request for Comments)} atau \textbf{Design Doc}.
+Dokumen ini berisi:
+\begin{enumerate}
+    \item \textbf{Context}: Kenapa kita melakukan ini?
+    \item \textbf{Proposed Solution}: Apa solusi teknisnya?
+    \item \textbf{Alternatives Considered}: Apa opsi lain yang kita tolak, dan kenapa? (Ini bagian terpenting).
+    \item \textbf{Risks}: Apa yang bisa salah?
+\end{enumerate}
+
+Artisan tidak melempar kode ("PR") tiba-tiba.
+Artisan menulis RFC dulu.
+"Saya berencana memigrasikan database user ke PostgreSQL. Ini alasannya..."
+Biarkan tim berkomentar di dokumen itu. Berdebatlah di atas kertas. Jauh lebih murah memperbaiki kesalahan desain di dokumen Google Docs daripada me-refactor kode yang sudah berjalan di produksi.
+
+\section{Selling Technical Debt Payoff (Menjual Utang Teknis)}
+
+Bisnis tidak peduli tentang "kode yang bersih" atau "refactoring".
+Bisnis peduli tentang \textbf{Kecepatan} dan \textbf{Risiko}.
+Jangan bilang ke manajer: "Kita perlu refactoring modul Order karena kodenya jelek."
+Bilanglah: "Modul Order saat ini sangat rapuh. Jika kita tidak membereskannya sekarang, penambahan fitur Diskon Natal nanti akan memakan waktu 2 minggu, bukan 2 hari, dan berisiko bug ganda."
+
+Gunakan bahasa mereka: \textbf{Risiko Kerugian} vs \textbf{Investasi Kecepatan}.
+Technical Debt itu seperti utang kartu kredit. Sedikit oke untuk beli rumah (fitur cepat). Tapi jika tidak dibayar bunganya, Anda bangkrut.
+
+\section{Disagree and Commit}
+
+Di tim yang sehat, konflik itu perlu.
+Jika semua orang setuju, berarti tidak ada yang berpikir kritis.
+Tapi konflik harus ada akhirnya.
+Prinsip \textbf{"Disagree and Commit"} (Tidak setuju tapi berkomitmen) dari Intel/Amazon adalah kunci.
+"Saya tidak setuju kita pakai GraphQL, saya lebih suka REST. Tapi karena tim memutuskan GraphQL, saya akan berusaha sekuat tenaga membuat implementasi GraphQL ini sukses."
+
+Jangan menjadi racun yang diam-diam berharap proyek gagal supaya bisa bilang "Tuh kan, saya bilang juga apa!".
+Itu bukan Artisan. Itu sabotase.
+
+\section{Mentorship: Warisan Terbesar}
+
+Kode Anda akan dihapus dalam 5-10 tahun.
+Sistem yang Anda bangun akan diganti.
+Satu-satunya yang abadi adalah \textbf{Orang-orang yang Anda bimbing}.
+Junior yang Anda ajari cara debugging yang sabar, cara menulis tes yang baik, cara berpikir sistematis.
+Mereka akan menjadi Senior dan Tech Lead di masa depan, membawa filosofi Anda.
+
+Artisan sejati tidak takut digantikan. Artisan sejati \textbf{mencetak penggantinya}.
+Karena ketika murid sudah siap, guru bisa move on ke tantangan baru yang lebih besar.
+
+\section{Penutup Bagian 2: Jalan Pedang}
+
+Memilih teknologi, membangun arsitektur, dan memimpin manusia bukanlah ilmu pasti. Itu adalah seni.
+Tidak ada jawaban "Benar" atau "Salah". Yang ada hanya \textbf{Trade-offs}.
+Setiap keputusan yang Anda buat memiliki harga yang harus dibayar.
+Artisan adalah dia yang sadar akan harga itu, dan memilih membayarnya dengan sengaja demi visi yang lebih besar.
+
+Selamat datang di jalan pedang.
+Sekarang, mari kita lihat bagaimana menghidupi jalan ini sehari-hari di Bagian 3: \textbf{Living the Tech}.

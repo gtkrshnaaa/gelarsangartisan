@@ -1,0 +1,81 @@
+\chapter{The Ground We Walk On (Infrastructure)}
+
+Infrastruktur adalah kanvas tempat kita melukis kode.
+Tanpa infrastruktur yang stabil, kode terbaik pun tidak ada gunanya. "It works on my machine" adalah kalimat paling mahal dalam sejarah IT.
+Tujuan Artisan bukan untuk menjadi SysAdmin yang begadang menjaga server, tapi untuk membangun \textbf{Fondasi Otomatis} yang bisa menyembuhkan diri sendiri.
+
+\section{Evolusi Abstraksi: Dari Logam ke Udara}
+
+Sejarah infrastruktur adalah sejarah \textbf{menjauh dari perangkat keras}.
+
+\subsection{1. Bare Metal (Zaman Batu)}
+Anda beli server fisik, pasang di rak, instal OS, dan berdoa AC ruangan tidak mati.
+\textbf{Kelebihan:} Performa maksimal. Tidak ada tetangga berisik (\textit{Noisy Neighbors}).
+\textbf{Kekurangan:} Mahal, lambat disiapkan (berminggu-minggu), dan Anda harus mengurus harddisk rusak sendiri.
+\textbf{Vonis Artisan:} Hanya untuk raksasa (Facebook/Google) atau kebutuhan khusus (High Frequency Trading). Jangan lakukan ini di 2026.
+
+\subsection{2. Virtual Machines (Zaman Perunggu)}
+EC2, DigitalOcean Droplets.
+Satu server fisik dibagi menjadi banyak server virtual.
+\textbf{Kelebihan:} Cepat (menit). Isolasi cukup baik.
+\textbf{Kekurangan:} Anda masih harus mengurus OS patching, security updates, dan konfigurasi server "Pet" (hewan peliharaan yang harus dirawat).
+
+\subsection{3. Containers (Zaman Besi)}
+Docker, Kubernetes.
+Kita membungkus aplikasi + semua dependensinya ke dalam satu kotak standar.
+\textbf{Kelebihan:} \textbf{Portabilitas Ekstrem}. Jalan di laptop = Jalan di server. "It works on my machine" mati di sini. Efisiensi sumber daya sangat tinggi.
+\textbf{Kekurangan:} Kompleksitas orkestrasi (Kubernetes itu sulit).
+
+\subsection{4. Serverless (Zaman Awan)}
+AWS Lambda, Vercel, Cloudflare Workers.
+Tidak ada server. Anda hanya mengupload fungsi kode. Cloud provider yang menjalankannya saat ada permintaan.
+\textbf{Kelebihan:} Skala nol hingga tak terhingga secara instan. Bayar per milidetik. Nol maintenance OS.
+\textbf{Kekurangan:} \textbf{Cold Start} (lambat saat pertama dipanggil). Vendor Lock-in (kode Lambda sulit dipindah ke Google Cloud Functions tanpa ubahan). Mahal pada skala trafik tinggi.
+
+\section{The Cost of Abstraction (Biaya Kenyamanan)}
+
+Hukum kekekalan kerumitan (\textit{Conservation of Complexity}) berlaku:
+"Kerumitan tidak hilang, ia hanya bergeser."
+Di Serverless, kerumitan operasional hilang, tapi kerumitan debugging dan biaya bertambah.
+
+Artisan harus menghitung \textbf{Total Cost of Ownership (TCO)}.
+Serverless sangat murah untuk startup kecil (Hampir gratis).
+Tapi saat trafik naik, tagihan Serverless bisa meledak.
+Sering kali, menyewa satu VPS gemuk seharga \$20/bulan bisa menangani trafik yang sama dengan tagihan Lambda \$500/bulan.
+Jangan buta karena kemudahan. Hitunglah.
+
+\section{Infrastructure as Code (IaC): Server sebagai Ternak}
+
+Jangan pernah mengkonfigurasi server produksi secara manual (SSH -> `apt-get install nginx`).
+Jika server itu meledak, Anda tidak bisa membuatnya lagi dengan persis sama. Anda lupa langkah-langkahnya.
+Gunakan \textbf{Infrastructure as Code} (Terraform, Pulumi, Ansible).
+Definisikan infrastruktur Anda dalam file teks:
+\texttt{resource "aws\_instance" "web" \{ ... \}}
+
+Dengan IaC:
+1.  Infrastruktur terversioning di Git.
+2.  Anda bisa menduplikasi lingkungan (Staging, Prod) dalam hitungan detik.
+3.  Server menjadi \textbf{Immutable} (Tak Berubah). Jika rusak, hancurkan dan buat baru dari cetakan kode. Server adalah Ternak (\textit{Cattle}), bukan Hewan Peliharaan (\textit{Pets}).
+
+\section{Exit Strategy: Menghindari Penjara Vendor}
+
+Setiap Cloud Provider (AWS, GCP, Azure) ingin mengunci Anda. Mereka memberi fitur-fitur canggih (DynamoDB, BigQuery) yang tidak ada di tempat lain.
+Jika Anda memakai fitur \textit{proprietary} ini, Anda tidak bisa pindah.
+Apakah itu buruk? Tidak selalu. Kadang kecepatan pengembangan sepadan dengan kuncian itu.
+
+Tapi Artisan yang bijak selalu punya \textbf{Rencana Keluar (Exit Strategy)}.
+Strategi keluar terbaik adalah \textbf{Container (Docker)}.
+Selama aplikasi Anda dibungkus dalam Docker, Anda bisa memindahkannya dari AWS ECS ke Google Cloud Run atau bahkan ke server besi tua di basement kantor dalam hitungan jam.
+Standarisasi pada Container adalah polis asuransi kebebasan Anda.
+
+\section{Rekomendasi Jalur Artisan}
+
+Untuk proyek baru di 2026:
+\begin{enumerate}
+    \item \textbf{Mulai dengan PaaS (Platform as a Service)}: Vercel, Railway, Render.
+    Fokus pada kode produk. Biarkan mereka mengurus SSL, Deploy, dan Scaling. Mahal sedikit tidak apa-apa karena waktu Anda lebih berharga.
+    \item \textbf{Tumbuh ke Container (CaaS)}: Saat tagihan PaaS mulai tidak masuk akal (biasanya >\$500/bulan), bungkus aplikasi ke Docker dan pindah ke layanan Container terkelola (AWS Fargate / Google Cloud Run).
+    \item \textbf{Hindari Kubernetes Sendiri}: Kecuali Anda punya tim DevOps khusus, jangan mengelola kluster Kubernetes sendiri. Itu adalah lubang hitam waktu.
+\end{enumerate}
+
+Infrastruktur terbaik adalah infrastruktur yang tidak perlu Anda pikirkan. Ia harus "membosankan", tidak terlihat, dan sekokoh tanah yang kita pijak.

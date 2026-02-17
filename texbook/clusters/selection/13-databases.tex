@@ -1,0 +1,92 @@
+\chapter{The Memory of the World (Databases)}
+
+Data adalah darah dari setiap aplikasi. Kode boleh berubah, server boleh mati, tapi data harus abadi.
+Memilih database adalah keputusan paling sulit untuk diubah. Migrasi database di sistem produksi yang hidup ibarat mengganti mesin pesawat saat sedang terbang. Salah pilih di awal, Anda akan menderita selama bertahun-tahun.
+
+Di era Big Data dan AI ini, kita dibombardir dengan istilah-istilah keren: \textit{Vector}, \textit{Graph}, \textit{Time-Series}.
+Tapi Artisan tidak memilih berdasarkan label keren. Kita memilih berdasarkan \textbf{Jaminan Integritas}.
+
+\section{Hukum Alam Data: Teorema CAP}
+
+Sebelum memilih database, kita harus tunduk pada hukum fisika sistem terdistribusi: \textbf{CAP Theorem} (Consistency, Availability, Partition Tolerance).
+Eric Brewer mengajarkan bahwa dalam sebuah sistem terdistribusi (seperti Cloud), kita hanya bisa memilih \textbf{dua dari tiga}:
+\begin{enumerate}
+    \item \textbf{Consistency (Konsistensi)}: Semua \textit{node} melihat data yang sama pada saat yang sama. Jika saya transfer uang, saldo Anda dan saya harus terupdate secara atomik.
+    \item \textbf{Availability (Ketersediaan)}: Setiap permintaan mendapat respons (sukses/gagal), tanpa jaminan data terbaru. Jika server utama mati, server cadangan menjawab, walau datanya mungkin usang 1 detik.
+    \item \textbf{Partition Tolerance (Toleransi Partisi)}: Sistem tetap jalan meski koneksi antar-server putus. (Ini wajib di Cloud, karena kabel laut bisa putus kapan saja).
+\end{enumerate}
+
+Pilihan riil Artisan hanya ada dua: \textbf{CP} (Konsisten tapi mungkin mati sebentar saat partisi) atau \textbf{AP} (Selalu hidup tapi mungkin datanya tidak konsisten).
+- \textbf{SQL (Postgres/MySQL)} biasanya memilih \textbf{CP}. Data uang/transaksi harus akurat. Lebih baik error daripada saldo salah.
+- \textbf{NoSQL (Cassandra/DynamoDB)} biasanya memilih \textbf{AP}. "Like" di Instagram boleh telat muncul 5 detik, asal aplikasi tidak \textit{down}.
+
+\section{ACID vs BASE: Pertarungan Integritas}
+
+\subsection{ACID (Atomicity, Consistency, Isolation, Durability)}
+Ini adalah standar emas perbankan.
+Jika Anda mentransfer uang dari A ke B, dan listrik mati di tengah jalan, uang tidak boleh hilang. Transaksi harus \textbf{berhasil semua} atau \textbf{gagal semua} (\textit{Atomic}).
+Database SQL menjamin ini. Hidup Artisan menjadi tenang. Kita tidak perlu memikirkan "bagaimana jika data korup?". Database mengurusnya.
+
+\subsection{BASE (Basically Available, Soft state, Eventual consistency)}
+Ini adalah filosofi "Cukup Bagus".
+Data mungkin tidak konsisten sekarang, tapi \textbf{pada akhirnya} (\textit{eventually}) akan konsisten.
+Cocok untuk: Analitik, Log, Feed Media Sosial.
+Tidak cocok untuk: Saldo Bank, Inventaris Stok.
+
+\section{Mengapa (Hampir) Selalu PostgreSQL?}
+
+Jika Anda ragu, pilih \textbf{PostgreSQL}.
+Postgres adalah "Pisau Swiss Army" dunia data.
+\begin{itemize}
+    \item Butuh Relasional (SQL)? Postgres rajanya.
+    \item Butuh JSON (NoSQL)? Postgres punya tipe data \texttt{JSONB} yang lebih cepat dari MongoDB di banyak kasus.
+    \item Butuh Pencarian Teks (Full Text Search)? Postgres punya \texttt{tsvector}. Tidak perlu Elasticsearch untuk skala kecil.
+    \item Butuh Data Geospasial (Peta)? PostGIS adalah standar industri.
+    \item Butuh Vector (AI/Embeddings)? \texttt{pgvector} memungkinkan Anda menyimpan embedding LLM langsung di database utama.
+\end{itemize}
+
+Kecuali Anda memiliki data skala \textit{Petabyte} (Google/Facebook scale) atau butuh \textit{latency} sub-milidetik (High Frequency Trading), Postgres sudah cukup.
+Jangan tergoda menggunakan MongoDB hanya karena "skema-nya fleksibel". Skema yang fleksibel di awal sering kali berarti \textbf{data yang berantakan} di kemudian hari. Skema SQL yang ketat memaksa Anda berpikir tentang struktur data sejak hari pertama. Itu hal yang baik.
+
+\section{Spesialisasi: Kapan Harus Selingkuh dari SQL?}
+
+Artisan pragmatis tahu kapan SQL tidak cukup. Gunakan alat spesialis hanya untuk kasus spesifik:
+
+\subsection{1. Redis (Cache \& Antrian)}
+Database disk lambat. RAM cepat.
+Redis menyimpan data di RAM. Gunakan untuk:
+- \textit{Session Management} (Login user).
+- \textit{Leaderboards} (Siapa top skor game saat ini?).
+- \textit{Cache} data yang sering dibaca tapi jarang berubah.
+Jangan gunakan Redis sebagai penyimpanan utama (primary store) kecuali Anda tahu cara mengelola risiko kehilangan data saat mati listrik.
+
+\subsection{2. ElasticSearch / MeiliSearch (Pencarian)}
+Jika Anda butuh fitur pencarian canggih seperti "Typo Tolerance" (mencari 'ipone' ketemu 'iPhone') atau \textit{faceting} kompleks, SQL `LIKE %query%` tidak akan cukup kuat.
+Gunakan mesin pencari khusus ini, tapi ingat: Anda sekarang punya dua sumber kebenaran (SQL + Search Engine) yang harus disinkronisasi. Ini menambah kompleksitas.
+
+\subsection{3. InfluxDB / TimescaleDB (Time Series)}
+Jika Anda menyimpan data sensor IoT atau log server yang masuk ribuan per detik:
+Waktu (Timestamp) adalah kunci utama. Database khusus ini dioptimalkan untuk \textit{menulis} data berurutan dengan sangat cepat dan \textit{menghapus} data lama secara otomatis.
+
+\subsection{4. Neo4j (Graph)}
+Jika masalah Anda adalah tentang \textbf{Hubungan} (\textit{Relationships}).
+Contoh: "Siapa teman dari teman saya yang menyukai film X dan tinggal di kota Y?"
+SQL butuh banyak \textit{JOIN} yang berat. Graph DB menjelajahi hubungan ini secara natural.
+Gunakan untuk: Jejaring Sosial, Rekomendasi Produk, Deteksi Penipuan (\textit{Fraud Detection}).
+
+\section{Database sebagai Komoditas vs Layanan}
+
+Di 2026, kita jarang menginstal database di VPS sendiri (`apt-get install postgresql`). Kita menyewa \textbf{Managed Database} (RDS, Supabase, Neon).
+Mengapa? Karena mengurus \textit{backup}, \textit{replication}, dan \textit{patching} database adalah pekerjaan penuh waktu yang berisiko tinggi.
+Biarkan penyedia cloud mengurus infrastrukturnya. Anda fokus pada \textit{query} dan pemodelan datanya.
+Biaya yang Anda bayar untuk Managed Service adalah asuransi ketenangan pikiran Anda.
+
+\section{Kesimpulan: Mulai dengan SQL, Pecah Saat Sakit}
+
+Nasihat abadi Artisan:
+\textbf{Mulai dengan satu database SQL monolitik.}
+Simpan user, produk, log, dan antrian di sana. Sederhana. Mudah di-backup. Transaksional.
+
+Hanya ketika (dan jika) Anda mengalami masalah performa yang tidak bisa diselesaikan dengan indeks atau \textit{caching}, barulah Anda memecah bagian spesifik ke database spesialis.
+Jangan melakukan optimasi prematur dengan menggunakan 5 jenis database di hari pertama peluncuran. Itu bukan arsitektur canggih; itu arsitektur bunuh diri.
+Yang sederhana adalah yang bertahan lama.
