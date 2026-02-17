@@ -24,21 +24,42 @@
 }
 
 % --- Colors ---
-\definecolor{artisanblack}{HTML}{1A1A1A}
-\definecolor{artisanblue}{HTML}{0D47A1}
+\definecolor{artisandark}{HTML}{121212}
+\definecolor{artisansilver}{HTML}{E0E0E0}
+
+% --- Apply Global Colors ---
+\usepackage{pagecolor}
+\pagecolor{artisandark}
+\AtBeginDocument{\color{artisansilver}}
 
 % --- Headers & Footers ---
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\textit{Titled Artisans Prince}}
-\fancyhead[LO]{\textit{\leftmark}}
+\fancyhead[LE,RO]{\color{artisansilver}\thepage}
+\fancyhead[RE]{\color{artisansilver}\textit{Titled Artisans Prince}}
+\fancyhead[LO]{\color{artisansilver}\textit{\leftmark}}
 \renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{artisansilver}\leaders\hrule height \headrulewidth\hfill}}
 
 % --- Title Formatting ---
 \titleformat{\chapter}[display]
-  {\normalfont\huge\bfseries\color{artisanblack}}
+  {\normalfont\huge\bfseries\color{artisansilver}}
   {\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+% --- Hyperlinks Theme ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=artisansilver,
+    filecolor=artisansilver,
+    urlcolor=artisansilver,
+}
+
+% --- Table of Contents Styling ---
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\color{artisansilver}\bfseries}
+\renewcommand{\cftchappagefont}{\color{artisansilver}\bfseries}
+\renewcommand{\cftsecfont}{\color{artisansilver}}
+\renewcommand{\cftsecpagefont}{\color{artisansilver}}
 
 % --- Page Setup ---
