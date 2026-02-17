@@ -1,27 +1,141 @@
 \chapter{The Era of Giants (1940 -- 1949)}
 
-Setelah teori diletakkan di dekade sebelumnya, Perang Dunia II mempercepat kelahiran mesin-mesin fisik. Ini adalah masa di mana "bug" pertama ditemukan dan arsitektur yang kita gunakan hari ini didefinisikan secara resmi.
+Setelah teori logika diletakkan di dekade sebelumnya, Perang Dunia II menjadi akselerator brutal bagi kelahiran mesin-mesin fisik. Ini adalah masa di mana komputasi keluar dari ruang akademis yang tenang dan masuk ke tengah-tengah pertempuran hidup dan mati. Sebagai seorang Artisan, kita harus melihat dekade ini sebagai momen di mana "abstraksi" dipaksa untuk menjadi "aksi". Di era ini, "bug" pertama ditemukan dalam arti harfiah, dan arsitektur yang kita gunakan hingga milenium ketiga didefinisikan secara resmi.
 
-\section{1941: Dunia Digital Pertama}
+\section{1940: Peperangan Logika di Bletchley Park}
+
+Di Inggris Tengah, sebuah rumah perkebunan bergaya Victoria bernama Bletchley Park menjadi pusat dari salah satu upaya intelektual terbesar dalam sejarah manusia. Di sini, para pemecah kode, termasuk Alan Turing, berjuang melawan mesin kriptografi Jerman, Enigma.
 
 \begin{description}
-    \item[Z3 (Konrad Zuse)] \textit{Saat pertama kali dibuat}, Z3 adalah komputer digital pertama di dunia yang dapat diprogram sepenuhnya dan otomatis. Menggunakan 2.000 relay, mesin ini bekerja dengan kecepatan clock antara 5 hingga 10 Hertz.
+    \item[The Bombe (Turing-Welchman)] \textit{Saat pertama kali dibuat}, Bombe adalah mesin elektromekanis raksasa yang dirancang untuk mempercepat proses dekripsi pesan Enigma. Ia bukan komputer general-purpose; ia adalah mesin spesialis yang dibangun untuk satu tujuan tunggal. Bombe bekerja dengan mensimulasikan beberapa rotor Enigma sekaligus untuk mencari pengaturan yang mungkin digunakan Jerman. Ia adalah monster dari rotasi, sakelar, dan kabel yang berisik.
 
-    \textit{Pada saat buku ini dibuat}, kecepatan clock itu terdengar lucu—ponsel di saku kita miliaran kali lebih cepat. Namun, Z3 adalah bukti bahwa presisi relay bisa menggantikan roda gigi mekanis. Tanpa langkah berani Zuse ini, jalur menuju transistor mungkin tidak akan pernah terbuka.
+    \textit{Pada saat buku ini dibuat di tahun 2026}, kita melihat Bombe sebagai leluhur dari \textit{Force-Driven Computing}. Apa yang dilakukan Bombe di tahun 1940 dengan roda gigi elektromagnetik adalah versi awal dari apa yang kita lakukan hari ini dengan \textit{high-performance computing} untuk memecahkan enkripsi kompleks. Sebagai Artisan, kita belajar dari Bombe bahwa terkadang kita harus membangun alat khusus untuk masalah yang sangat spesifik. Tidak semua solusi harus bersifat generik; keindahan teknik sering kali ditemukan dalam ketajaman alat yang dirancang khusus untuk satu tugas yang mustahil. Bombe adalah "pukulan palu" logika yang memenangkan perang.
 \end{description}
 
-\section{1945: Von Neumann \& ENIAC}
+\section{1941: Z3 — Komputer Digital Pertama di Dunia}
+
+Di Berlin, di tengah reruntuhan bom Sekutu, Konrad Zuse berhasil menyelesaikan Z3. Ini adalah pencapaian yang menakjubkan bagi seorang individu yang bekerja di bawah bayang-bayang perang besar.
 
 \begin{description}
-    \item[The First Draft (John von Neumann)] \textit{Saat pertama kali dibuat} melalui laporan "First Draft of a Report on the EDVAC", Von Neumann merinci arsitektur komputer (CPU, Memori, Unit Input/Output) yang kita gunakan hingga tahun 2026 ini. 
+    \item[Z3: Keajaiban Relay] \textit{Saat pertama kali dibuat}, Z3 adalah komputer biner digital pertama di dunia yang dapat diprogram sepenuhnya dan berkerja secara otomatis. Menggunakan sekitar 2.000 relay elektrik, Z3 dapat melakukan penambahan, pengurangan, perkalian, pembagian, dan bahkan akar kuadrat. Mesin ini memiliki unit memori dan unit aritmatika yang terpisah—sebuah konsep yang mendahului banyak komputer modern lainnya. Kecepatannya sangat lambat bagi standar kita, namun bagi tahun 1941, ia adalah puncak kecerdasan mekanika-elektrik.
 
-    \textit{Pada saat buku ini dibuat}, meskipun kita sudah memiliki prosesor multi-core dengan miliaran transistor, fondasi dasarnya tetap "Von Neumann Architecture". Menakjubkan melihat bagaimana sebuah draf laporan dari tahun 1945 masih mengendalikan cara kita membangun perangkat lunak modern.
+    \textit{Pada saat buku ini dibuat}, Z3 tetap menjadi mercusuar bagi setiap Artisan independen. Zuse tidak memiliki tim ribuan orang seperti di AS; ia memiliki visi dan ketekunan. Ironisnya, Z3 asli hancur dalam serangan bom tahun 1943. Namun, logikanya tidak hancur. Ia membuktikan bahwa desain yang hebat melampaui kehancuran fisik. Di tahun 2026, saat kita merancang sistem terdistribusi yang harus tahan terhadap kegagalan (\textit{fault-tolerant}), kita sebenarnya sedang mewarisi semangat Z3 yang bertahan di tengah badai perang. Keputusan Zuse untuk tetap menggunakan biner saat dunia masih terjebak dalam desimal membuktikan bahwa pilihan teknis yang tepat adalah bentuk kepemimpinan yang paling murni.
 \end{description}
 
-\section{1947: Lahirnya Kristal Ajaib}
+\section{1942: Fajar Elektronika (Atanasoff-Berry Computer)}
+
+Di Iowa State College, John Atanasoff dan Clifford Berry menyelesaikan prototipe mesin yang akan memicu transisi dari relay ke elektronik murni.
 
 \begin{description}
-    \item[The Transistor (Bell Labs)] \textit{Saat pertama kali dibuat}, transistor pertama di Bell Labs berukuran cukup besar untuk digenggam. Ia diciptakan untuk menggantikan tabung vakum yang panas, boros energi, dan sering pecah.
+    \item[ABC: Kecepatan Tabung Vakum] \textit{Saat pertama kali dibuat}, ABC adalah mesin pertama yang menggunakan tabung vakum (vacuum tubes) untuk melakukan perhitungan digital. Transisi ini sangat krusial karena tabung vakum tidak memiliki bagian yang bergerak seperti relay, sehingga dapat beroperasi ribuan kali lebih cepat. ABC juga memperkenalkan konsep \textit{regenerative capacitor memory}, yang secara konseptual merupakan nenek moyang dari DRAM yang kita gunakan hari ini.
 
-    \textit{Pada saat buku ini dibuat}, kita sedang memasukkan puluhan miliar transistor ke dalam area seukuran kuku jari. Transistor adalah "batu bata" dari peradaban digital kita. Sebagai artisan, kita harus menghormati komponen kecil ini yang memungkinkan semua abstraksi perangkat lunak yang kita cintai.
+    \textit{Pada saat buku ini dibuat}, kita merayakan ABC sebagai momen di mana komputasi melepaskan diri dari hambatan inersia mekanis. Kecepatan cahaya menggantikan kecepatan motor. Sebagai Artisan, kita belajar dari ABC bahwa untuk mencapai lompatan kuantum dalam performa, terkadang kita harus mengganti medianya secara keseluruhan. ABC adalah pengingat bahwa inovasi sering kali datang dari pinggiran—dari sebuah kampus di Iowa, bukan hanya dari pusat-pusat kekuasaan dunia.
+\end{description}
+
+\section{1943: Colossus — Pembasmi Rahasia Hitler}
+
+Pertempuran intelijen mencapai puncaknya dengan kelahiran Colossus, komputer elektronik digital pertama yang dapat diprogram dalam skala besar.
+
+\begin{description}
+    \item[Colossus Mark 1] \textit{Saat pertama kali dibuat} oleh Tommy Flowers di kantor pos riset Inggris (Dollis Hill), Colossus dirancang untuk memecahkan kode Lorenz yang jauh lebih kompleks daripada Enigma. Dengan menggunakan lebih dari 1.500 tabung vakum (meningkat menjadi 2.400 pada Mark 2), Colossus adalah raksasa elektronik pertama yang mampu memproses data dengan kecepatan yang belum pernah terbayangkan sebelumnya.
+
+    \textit{Pada saat buku ini dibuat}, kerahasiaan Colossus (yang baru dibuka dekade 1970-an) menunjukkan sisi lain dari sejarah IT: bahwa kemajuan paling drastis sering kali disimpan rapat di balik tirai kekuasaan. Sebagai Artisan, kita belajar bahwa teknologi bukan hanya tentang kode, tapi tentang dampak strategis. Colossus tidak hanya memecahkan kode; ia memperpendek perang selama bertahun-tahun dan menyelamatkan jutaan nyawa. Ia adalah bukti bahwa komputasi adalah senjata yang paling ampuh jika berada di tangan yang tepat.
+\end{description}
+
+\section{1944: Raksasa Mekanis dan Lahirnya "Bug" (Harvard Mark I)}
+
+Di saat Sekutu mulai membalikkan keadaan perang, di Universitas Harvard, Howard Aiken akhirnya menyelesaikan proyek ambisiusnya: IBM Automatic Sequence Controlled Calculator (ASCC), yang lebih kita kenal sebagai Harvard Mark I. Ini adalah mesin yang sangat berbeda dari Colossus yang elektronik; ia adalah tarian elektromagnetik yang megah, sebuah monumen bagi mekanika yang presisi.
+
+\begin{description}
+    \item[The Steel Orchestration] \textit{Saat pertama kali dibuat}, Mark I adalah pemandangan yang menggetarkan. Panjangnya mencapai 15 meter, beratnya 5 ton, dan memiliki ribuan roda gigi serta sakelar yang saling terhubung oleh poros sepanjang 15 meter yang berputar terus-menerus. Ia digerakkan oleh motor listrik 5 tenaga kuda. Pengoperasiannya tidak menggunakan keyboard, melainkan pita kertas yang dilubangi (\textit{punched paper tape}). Di sini, Grace Hopper—salah satu programmer wanita pertama di dunia—mulai menunjukkan kejeniusannya dalam menjinakkan raksasa ini. Ia harus memahami setiap pola mekanis untuk bisa "menulis" perintah bagi mesin tersebut.
+
+    \textit{Pada saat buku ini dibuat di tahun 2026}, kita mengenang Mark I bukan karena kecepatannya (yang sangat lambat dibandingkan standar elektronik), tapi karena kedisiplinan yang ia tuntut dari para operatornya. Di sinilah istilah "bug" menjadi melegenda ketika sebuah ngengat terjepit di antara relay Mark II (penerus Mark I). Sebagai Artisan, insiden "bug" pertama ini adalah pengingat konstan bahwa kecacatan terkecil dalam infrastruktur fisik dapat meruntuhkan seluruh logika perangkat lunak. Grace Hopper mengajari kita bahwa untuk menjadi programmer yang hebat, kita harus memiliki ketelitian seorang kurator dan kesabaran seorang detektif. Warisan Mark I adalah kedisiplinan dalam menulis urutan instruksi yang logis—sebuah seni yang masih kita asah hingga hari ini dalam setiap algoritma yang kita susun. Keberanian Grace Hopper untuk melakukan "debugging" secara fisik adalah simbol dari kedekatan sang Artisan dengan medianya.
+\end{description}
+
+\section{1945: ENIAC dan Lahirnya "Aristektur Suci" (Von Neumann)}
+
+Tahun 1945 adalah tahun kemenangan di medan perang, sekaligus tahun kemenangan bagi sains informasi. Ini adalah tahun di mana dunia melihat komputer elektronik pertama yang benar-benar masif, sekaligus tahun lahirnya draf arsitektur yang akan mengontrol setiap komputer di bumi hingga delapan dekade kemudian.
+
+\begin{description}
+    \item[ENIAC (Electronic Numerical Integrator and Computer)] \textit{Saat pertama kali dibuat} di Moore School of Electrical Engineering (Universitas Pennsylvania), ENIAC adalah pemandangan dari masa depan yang menakutkan sekaligus menakjubkan. Menggunakan lebih dari 17.000 tabung vakum, ENIAC dapat melakukan 5.000 penambahan per detik—ribuan kali lebih cepat dari mesin mekanis mana pun. Ia tidak memiliki memori internal untuk menyimpan program; untuk "memprogram" ENIAC, sebuah tim yang terdiri dari enam wanita jenius—Jean Bartik, Kay McNulty, Betty Holberton, Marlyn Wescoff, Frances Bilas, dan Ruth Lichterman—harus secara fisik menghubungkan ribuan kabel pada panel-panel raksasa. Memprogram ENIAC adalah sebuah pekerjaan fisik yang sangat menguras tenaga dan pikiran.
+
+    \textit{Pada saat buku ini dibuat di tahun 2026}, kita memandang ENIAC sebagai "Dinosaurus Elektronik" yang mengawali segalanya. Meskipun pemrogramannya sangat merepotkan, ia membuktikan bahwa elektron—bukan mekanika—adalah masa depan. ENIAC adalah bukti bahwa jika kita ingin membangun sistem yang mampu menangani kompleksitas besar, kita harus melepaskan ketergantungan pada bagian yang bergerak. Sebagai Artisan, ENIAC mengajarkan kita tentang pengorbanan: untuk mendapatkan kecepatan, kita harus mengelola panas (tabung vakum ENIAC sering meledak setiap beberapa jam). Inovasi selalu datang dengan biaya pemeliharaan yang tinggi, dan pemahaman akan "fisik" dari perangkat lunak adalah kunci bagi Artisan untuk menjaga performa sistem.
+
+    \item[The First Draft (John von Neumann)] \textit{Saat pertama kali dibuat} sebagai sebuah laporan rahasia untuk proyek EDVAC, draf John von Neumann merinci arsitektur komputer (CPU, Unit Kontrol, Memori, Input/Output) yang memisahkan antara pemrosesan dan penyimpanan data. Yang paling revolusioner adalah konsep \textit{Stored-Program}: ide bahwa program (instruksi) dapat disimpan di memori yang sama dengan data. Sebelum ini, mesin dan program adalah dua hal yang berbeda secara fisik. Von Neumann menyatukannya dalam satu aliran data.
+
+    \textit{Pada saat buku ini dibuat}, "Arsitektur Von Neumann" tetap menjadi fondasi dari hampir semua komputer di planet ini, mulai dari mikrokontroler di mesin cuci hingga superkomputer tercepat. Meskipun kita sudah mencapai era komputasi kuantum dan prosesor saraf, logika dasar Von Neumann tetap menjadi bahasa standar industri kita. Memahami draf tahun 1945 ini adalah cara terbaik bagi seorang Artisan untuk memahami bagaimana komputer modern benar-benar "berpikir" di balik semua lapisan abstraksi yang kita miliki saat ini. Ia adalah "cetak biru universal" yang mendefinisikan batas-batas ruang kerja digital kita.
+\end{description}
+
+\section{1946: Era Transisi dan Komputer ke Ruang Publik}
+
+Setelah perang berakhir, kerahasiaan mulai memudar. ENIAC diperkenalkan kepada publik dengan demonstrasi yang memukau, dan imajinasi dunia tentang "Otak Elektronik" mulai tumbuh liar.
+
+\begin{description}
+    \item[The Public Reveal \& EDVAC] \textit{Saat pertama kali dibuat}, demonstrasi ENIAC untuk pers menunjukkan mesin tersebut menghitung lintasan rudal dalam waktu kurang dari waktu yang dibutuhkan rudal itu sendiri untuk terbang. Dunia terperangah. Sementara itu, pengerjaan EDVAC (Electronic Discrete Variable Automatic Computer) dimulai untuk mengimplementasikan ide \textit{stored-program} Von Neumann. Ini adalah peralihan dari mesin yang "diprogram lewat kabel" menjadi mesin yang "diprogram lewat data".
+
+    \textit{Pada saat buku ini dibuat}, kita melihat momen tahun 1946 sebagai awal dari antusiasme (dan ketakutan) publik terhadap teknologi. Hubungan kita dengan AI di tahun 2026 sebenarnya dimulai dari kekaguman terhadap tabung-tabung vakum ENIAC di tahun 1946. Sebagai Artisan, kita harus sadar akan ekspektasi publik; kita membangun bukan hanya untuk mesin, tapi untuk imajinasi kolektif manusia. Transisi menuju EDVAC mengingatkan kita bahwa efisiensi dalam "pengelolaan instruksi" sering kali lebih krusial daripada sekadar menambah daya komputasi mentah.
+\end{description}
+
+\section{1947: Lahirnya "Kristal Ajaib" (The Transistor)}
+
+Di akhir dekade ini, sebuah penemuan di Bell Labs akan secara perlahan namun pasti membunuh tabung vakum yang panas dan raksasa. Inilah awal dari miniaturisasi yang kita nikmati hari ini.
+
+\begin{description}
+    \item[The Transistor (Bell Labs)] \textit{Saat pertama kali dibuat} oleh William Shockley, John Bardeen, dan Walter Brattain, transistor pertama (point-contact transistor) berukuran cukup besar untuk digenggam dan terlihat sangat kasar—sebuah lempengan germanium dengan kontak emas. Tujuannya adalah untuk mencari alternatif yang lebih andal dan hemat energi daripada tabung vakum untuk sistem telepon. Mereka tidak pernah membayangkan bahwa "kristal ajaib" ini akan menjadi batu bata bagi seluruh peradaban digital.
+
+    \textit{Pada saat buku ini dibuat di tahun 2026}, kita sedang memasukkan puluhan miliar transistor ke dalam area seukuran kuku jari dalam chip 2nm atau 3nm. Transistor adalah "atom" dari dunia IT kita. Sebagai Artisan, kita harus menghormati komponen kecil ini. Kemampuannya untuk berperan sebagai sakelar tanpa bagian yang bergerak adalah keajaiban fisika yang memungkinkan semua abstraksi perangkat lunak yang berat di tahun 2026 dapat berjalan dengan lancar. Memahami "fisika transistor" mengingatkan kita bahwa di balik setiap baris kode tingkat tinggi, ada pergerakan elektron yang diatur secara presisi dalam kristal silikon.
+\end{description}
+
+\section{1948: Tahun Kelahiran "Program Sejati" (Manchester Baby)}
+
+Sementara teori Von Neumann sudah ada, dunia akhirnya melihat mesin pertama yang benar-benar bisa menyimpan dan menjalankan program dari memori elektroniknya.
+
+\begin{description}
+    \item[Manchester Baby (SSEM)] \textit{Saat pertama kali dibuat} di University of Manchester oleh Frederic Williams dan Tom Kilburn, "Baby" hanyalah mesin eksperimental kecil untuk menguji tabung sinar katoda (Williams tubes) sebagai memori digital. Program pertamanya hanya terdiri dari 17 instruksi untuk menemukan pembagi tertinggi dari $2^{18}$. Ini adalah pertama kalinya instruksi dijalankan langsung dari memori elektronik yang dapat diubah-ubah.
+
+    \textit{Pada saat buku ini dibuat}, Manchester Baby adalah nenek moyang dari cara kita berinteraksi dengan komputer saat ini. Konsep di mana kita bisa "mengganti perangkat lunak tanpa mengganti perangkat keras" lahir di sini. Sebagai Artisan, kita harus merayakan momen ini; di sinilah fleksibilitas kreatif kita sebagai pengembang aplikasi benar-benar dimulai. "Baby" membuktikan bahwa memori yang cepat adalah kunci dari kecerdasan mesin.
+\end{description}
+
+\section{1949: EDSAC dan Evolusi Praktis}
+
+Eksperimen mulai berubah menjadi utilitas. Di Cambridge, EDSAC (Electronic Delay Storage Automatic Calculator) dibangun sebagai komputer praktis pertama yang menggunakan arsitektur Von Neumann.
+
+\begin{description}
+    \item[EDSAC \& Maurice Wilkes] \textit{Saat pertama kali dibuat}, EDSAC memperkenalkan banyak inovasi praktis, termasuk penggunaan garis tunda merkuri (\textit{mercury delay lines}) untuk memori. Yang lebih penting, Maurice Wilkes dan timnya mulai mengembangkan konsep \textit{programming library}—kumpulan rutinitas yang bisa digunakan kembali. 
+
+    \textit{Pada saat buku ini dibuat}, konsep *library* atau *package* adalah nyawa dari pengembangan perangkat lunak modern. Ribuan paket yang kita impor di tahun 2026 melalui `npm`, `pip`, atau `cargo` adalah evolusi langsung dari buku catatan rutinitas Maurice Wilkes di tahun 1949. Sebagai Artisan, kita belajar bahwa standarisasi dan *reusability* adalah cara kita mengelola kompleksitas yang terus tumbuh. EDSAC menutup dekade 1940-an dengan pesan yang jelas: komputer bukan lagi sekadar eksperimen fisik, melainkan platform yang didorong oleh kecakapan penulisan kode.
+\end{description}
+
+\section{Mengarahkan Arus Sejarah: Dari Mesin Perang ke Mesin Pemikir}
+
+Dekade 1940-an adalah bukti nyata bagaimana urgensi dapat memicu evolusi teknis yang melompati dekade-dekade riset normal. Dalam waktu kurang dari sepuluh tahun, manusia berpindah dari relay elektromagnetik yang lambat ke tabung vakum yang beroperasi pada kecepatan kilohertz. Ini bukan sekadar kemajuan teknis; ini adalah pergeseran fundamental dalam cara kita memandang alat.
+
+\textit{Saat pertama kali dibuat}, mesin-mesin ini adalah "proyek militer rahasia" dengan biaya yang luar biasa besar. Mereka dibangun untuk menghancurkan (dekripsi pesan musuh) atau memandu kehancuran (perhitungan balistik). Namun, di bawah tekanan perang, para ilmuwan dan insinyur menemukan sesuatu yang jauh lebih universal. Komputer berhenti menjadi sekadar alat hitung khusus dan mulai menjadi platform logika yang dapat diprogram ulang.
+
+\textit{Pada saat buku ini dibuat di tahun 2026}, kita melihat pola yang sama berulang. Teknologi yang paling canggih sering kali lahir dari kebutuhan strategis yang mendesak—baik itu dalam keamanan siber, pemodelan iklim, atau krisis kesehatan global. Sebagai Artisan, kita harus memiliki ketajaman untuk membedakan antara "alat untuk satu tujuan" dan "fondasi untuk masa depan". Dekade 1940-an mengajari kita bahwa inovasi yang lahir dari tekanan paling berat sering kali memberikan fondasi yang paling kokoh bagi masa damai.
+
+\section{Tenaga Kerja Tak Terlihat: Sang Artisan Wanita Pertama}
+
+Salah satu pelajaran paling penting yang harus kita petik dari dekade ini adalah peran vital para wanita yang bekerja di garis depan penulisan instruksi mesin. Di ENIAC, di Harvard Mark I, dan di Bletchley Park, para wanita bukan hanya "pembantu"; mereka adalah arsitek logika pertama.
+
+\textit{Saat pertama kali dibuat}, peran "programmer" sering diapresiasi sebagai pekerjaan administratif tingkat rendah, sementara "hardware engineer" dianggap sebagai bintang utama. Jean Bartik dan kawan-kawannya di ENIAC harus memahami skema elektrik yang luar biasa kompleks untuk bisa melakukan pemrograman kabel (hard-wiring). Mereka adalah orang pertama yang melakukan \textit{logical debugging} pada sistem elektronik berskala besar.
+
+\textit{Pada saat buku ini dibuat}, kita menyadari bahwa pemisahan antara "perangkat keras" dan "perangkat lunak" yang kita nikmati hari ini adalah berkat kerja keras para pionir wanita ini. Mereka mengubah tumpukan kabel dan tabung vakum menjadi mesin yang bisa memberikan jawaban bermanfaat. Sebagai Artisan, kita harus menghormati akar ini. Di tahun 2026, keterampilan untuk menjembatani antara abstraksi kode dan realitas fisik sistem tetap menjadi keterampilan Artisan yang paling langka dan berharga. Kita membangun di atas bahu para wanita yang menjinakkan raksasa elektronik pertama dengan tangan dan pikiran mereka yang presisi.
+
+\section{Fajar Abstraksi: Subrutin dan Mnemonic Pertama}
+
+Di penghujung dekade, sebuah revolusi dalam cara kita menulis instruksi mulai menampakkan bentuknya. Ini adalah transisi dari memanipulasi bit murni menjadi penggunaan simbol yang bisa dipahami manusia.
+
+\textit{Saat pertama kali dibuat}, menulis program untuk mesin seperti EDSAC atau Manchester Baby berarti bergulat dengan biner murni atau kode mesin yang sangat sulit dibaca. Maurice Wilkes menyadari bahwa untuk membangun sistem yang lebih besar, kita tidak bisa terus-menerus menulis ulang fungsi yang sama. Di Cambridge, tim EDSAC mulai menyusun \textit{Initial Orders}, sebuah kumpulan instruksi awal yang memungkinkan mesin untuk membaca mnemonic (singkatan huruf) sebagai pengganti angka biner mentah. Inilah cikal bakal dari bahasa Assembly.
+
+\textit{Pada saat buku ini dibuat di tahun 2026}, kita menggunakan bahasa pemrograman tingkat tinggi yang sangat abstrak, namun setiap fungsi yang kita panggil—bahkan dalam platform AI tercanggih sekalipun—pada akhirnya akan diterjemahkan kembali ke dalam instruksi dasar yang konsepnya dirumuskan di akhir 1940-an. Sebagai Artisan, kita harus menghargai "lapisan pertama" abstraksi ini. Memahami bagaimana subrutin pertama kali diciptakan di EDSAC membantu kita untuk menulis kode yang lebih efisien dan modular hari ini. Kita belajar bahwa manajemen kompleksitas dimulai dengan kemampuan untuk menamai dan menyimpan logika yang sering digunakan.
+
+\section{Refleksi Dekade: Membangun Raksasa yang Tak Kenal Lelah}
+
+Dekade 1940-an ditutup dengan dunia yang mulai pulih dari luka perang, namun siap untuk melompat ke era informasi. Transistor telah lahir, Manchester Baby telah berjalan, dan EDSAC telah membuktikan kegunaan praktisnya.
+
+\begin{description}
+    \item[Warisan Sang Artisan] \textit{Saat pertama kali dibuat}, dekade ini memberikan kita Arsitektur Von Neumann, Konsep Stored-Program, dan Transistor. Jika 1930-an adalah "jiwa" komputasi, maka 1940-an adalah "tubuh" elektroniknya.
+
+    \textit{Pada saat buku ini dibuat}, kita melihat bahwa raksasa yang dibangun di tahun 1940-an telah menciut hingga seukuran saku jari, namun logikanya tetap raksasa. Menarik untuk merenung bahwa meski kecepatan kita meningkat triliunan kali lipat, masalah dasar yang kita hadapi—sinkronisasi, memori, dan efisiensi energi—adalah masalah yang sama yang membuat dahi Von Neumann berkerut di tahun 1945. Menjadi Artisan berarti memahami kontinuitas ini. Kita tidak hanya menggunakan teknologi; kita adalah bagian dari narasi perakitan logika yang telah berjalan selama hampir satu abad.
 \end{description}
