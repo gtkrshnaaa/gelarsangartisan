@@ -37,10 +37,18 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[LE,RO]{\color{artisansilver}\thepage}
-\fancyhead[RE]{\color{artisansilver}\textit{Titled Artisans Prince}}
+\fancyhead[RE]{\color{artisansilver}\textit{Gelar Sang Artisan}}
 \fancyhead[LO]{\color{artisansilver}\textit{\leftmark}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{artisansilver}\leaders\hrule height \headrulewidth\hfill}}
+
+% --- Override Plain Style (for Chapter pages) ---
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\color{artisansilver}\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
 
 % --- Title Formatting ---
 \titleformat{\chapter}[display]
