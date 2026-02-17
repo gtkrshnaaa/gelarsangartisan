@@ -4,7 +4,7 @@
 DOC=main
 BUILDDIR=dist
 OUTDIR=bin
-OUTNAME=gelar-sang-artisan.pdf
+OUTNAME=titled-artisans-prince.pdf
 LATEX=pdflatex
 LATEXFLAGS=-interaction=nonstopmode -halt-on-error -output-directory=$(BUILDDIR)
 

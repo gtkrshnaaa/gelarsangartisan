@@ -1,4 +1,9 @@
-# LaTeX build artifacts
+# Build directories
+dist/
+# Allow final artifacts
+!bin/titled-artisans-prince.pdf
+
+# LaTeX intermediate files (in root or elsewhere)
 *.aux
 *.log
 *.out
@@ -7,9 +12,8 @@
 *.fdb_latexmk
 *.synctex.gz
 *.pdf
-!./dist/main.pdf
-!./bin/*.pdf
-# Exclude standard intermediate files
+# Re-include the specific artifact we want (in case *.pdf excluded it)
+!bin/titled-artisans-prince.pdf
 *.dvi
 *.bbl
 *.blg
