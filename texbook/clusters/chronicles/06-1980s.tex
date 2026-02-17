@@ -1,168 +1,130 @@
-\chapter{The Era of Standardization (1980 -- 1989)}
+\chapter{The Era of Interfaces (1980 -- 1989)}
+
+Pada tahun 1970-an, kita belajar bagaimana membuat komputer menjadi \textit{personal}. Kita belajar bahwa kekuatan silikon bisa diletakkan di atas meja kita, di bawah kendali jari-jari kita sendiri.
+Namun, pada awal 1980-an, kita menghadapi masalah baru yang jauh lebih rumit: \textbf{Isolasi} dan \textbf{Kompleksitas}.
 
-Jika dekade sebelumnya adalah tentang ledakan inovasi yang liar dari berbagai garasi, maka 1980-an adalah tentang bagaimana ide-ide tersebut dikonsolidasikan menjadi standar global. Ini adalah dekade di mana antarmuka grafis keluar dari laboratorium riset dan masuk ke meja kerja kita, di mana protokol internet ditetapkan sebagai bahasa universal, dan di mana metodologi pemrograman modern mulai matang. Sebagai Artisan, kita melihat 1980-an sebagai era di mana "struktur" mulai mengendalikan "kekacauan" awal teknologi.
+Komputer-komputer pribadi itu seperti pulau-pulau yang terisolasi. Mereka memiliki bahasa yang berbeda, protokol yang berbeda, dan sistem file yang tidak kompatibel.
+Di sisi lain, perangkat lunak menjadi semakin besar dan rumit. Menulis sistem operasi dengan bahasa prosedural (seperti C) mulai terasa seperti membangun gedung pencakar langit dengan tumpukan batu bata tanpa semen yang kuat. Satu bata salah, seluruh gedung runtuh.
 
-\section{1980: Kematangan Objek dan Minikomputer Rumahan}
+Dekade 1980-an adalah dekade \textbf{Antarmuka} (\textit{Interfaces}).
+Dunia membutuhkan cara standar agar manusia bisa berbicara dengan mesin (GUI), agar mesin bisa berbicara dengan mesin (TCP/IP), dan agar programmer bisa berbicara dengan kompleksitas (OOP).
 
-Tahun ini menandai rilis bahasa yang akan mendefinisikan cara kita berpikir tentang sistem di masa depan: Smalltalk-80.
-
-\begin{description}
-    \item[Smalltalk-80 (The Masterpiece of OOP)] \textit{Saat pertama kali dibuat} di Xerox PARC oleh tim yang dipimpin oleh Alan Kay dan Adele Goldberg, Smalltalk-80 bukan sekadar bahasa pemrograman; ia adalah lingkungan komputasi yang lengkap. Ia memperkenalkan konsep di mana "segalanya adalah objek" yang saling berkirim pesan.
-
-    \textit{Pada saat buku ini dibuat di tahun 2026}, kita melihat Smalltalk sebagai "leluhur suci" dari Java, Python, dan Ruby. Sebagai Artisan, Smalltalk mengajari kita tentang "abstraksi mental". Di balik layar, pesan-pesan yang dikirim antar objek adalah cara untuk mengelola kompleksitas yang terus tumbuh. Pengaruh Smalltalk datang dari kejernihan model berpikirnya. Ia mengajak kita untuk tidak melihat kode sebagai daftar instruksi linear, tapi sebagai ekosistem entitas yang berinteraksi. Inilah *The Art of Influence* di level arsitektur: mengubah cara manusia memetakan dunia nyata ke dalam mesin.
-
-    \item[Seagate ST-506 (First 5.25" HDD)] \textit{Saat pertama kali dibuat}, ini adalah hard disk pertama yang muat di dalam ruang drive minikomputer rumahan, dengan kapasitas 5 MB. Sebelumnya, hard disk adalah lemari besi yang besar.
-
-    \textit{Pada saat buku ini dibuat}, kita memiliki terabyte di dalam saku kita. Namun, sebagai Artisan, ST-506 adalah pengingat akan pentingnya "standarisasi fisik". Dengan menciptakan ukuran yang konsisten, Seagate memungkinkan produsen lain untuk membangun mesin yang kompetibel. Pengaruh teknis seringkali dimulai dari keputusan dimensi yang tepat.
-\end{description}
-
-\section{1981: Kelahiran Standar Global (IBM PC \& MS-DOS)}
-
-Tahun ini adalah titik balik di mana satu perusahaan besar menentukan nasib industri selama beberapa dekade ke depan.
-
-\begin{description}
-    \item[IBM PC (The 5150)] \textit{Saat pertama kali dibuat}, IBM PC bukanlah komputer tercanggih secara teoritis. Tim di Boca Raton yang dipimpin oleh Don Estridge memilih prosesor Intel 8088—sebuah chip 16-bit dengan bus data 8-bit—karena infrastruktur motherboard dan komponen pendukungnya lebih murah dan tersedia luas dibandingkan 8086 yang murni 16-bit. Keputusan ini sangat pragmatis.
-
-    \textit{Pada saat buku ini dibuat}, kita menyadari bahwa keputusan IBM untuk menggunakan "arsitektur terbuka" adalah langkah \textit{Influence} yang paling masif. Di balik layar, dengan mempublikasikan skema teknis dan BIOS (meskipun mereka mencoba melindunginya), IBM menciptakan standar yang memungkinkan ribuan perusahaan memproduksi "klon" PC. Sebagai Artisan, kita belajar bahwa pengaruh terbesar seringkali datang ketika kita memberikan ruang bagi orang lain untuk berkontribusi di atas fondasi kita. Kekuasaan yang dibagikan justru akan menjadi kekuasaan yang mutlak melalui dominasi standar.
-
-    \item[MS-DOS (Microsoft)] \textit{Saat pertama kali dibuat}, sistem operasi ini adalah antarmuka teks yang sederhana. Di balik layar, ia hanyalah jembatan antara instruksi pengguna dan BIOS perangkat keras.
-
-    \textit{Pada saat buku ini dibuat}, kita melihat MS-DOS sebagai fondasi ekonomi perangkat lunak. Pelajarannya bagi Artisan: penguasaan atas "lapisan kendali" (sistem operasi) jauh lebih berharga daripada perangkat keras itu sendiri. Microsoft tidak membuat besi; mereka membuat aturan main bagi besi tersebut.
-\end{description}
-
-\section{1982: Bahasa Universal Internet dan Kekacauan Grafis}
-
-Tahun di mana internet mendapatkan "tulang punggung" resminya dan persaingan komputer rumahan mencapai puncaknya.
-
-\begin{description}
-    \item[TCP/IP Standardization] \textit{Saat pertama kali dibuat} sebagai standar resmi oleh Departemen Pertahanan AS, TCP/IP memungkinkan jaringan yang berbeda untuk saling berkomunikasi. Di balik layar, protokol ini memecah data menjadi paket-paket kecil yang pintar mencari jalan sendiri ke tujuan.
-
-    \textit{Pada saat buku ini dibuat}, TCP/IP adalah udara yang kita hirup di dunia digital. Sebagai Artisan, kita harus merenungkan betapa pentingnya protokol yang "agnostik terhadap media". Ia tidak peduli apakah dikirim lewat kabel tembaga, serat optik, atau satelit. Inilah bentuk pengaruh yang tak terlihat: menjadi standar komunikasi yang begitu universal sehingga ia tidak lagi dianggap sebagai teknologi, tapi sebagai hukum alam digital. Keberhasilan internet adalah keberhasilan standarisasi yang rendah hati.
-
-    \item[Commodore 64] \textit{Saat pertama kali dibuat}, C64 menawarkan suara dan grafik yang luar biasa untuk harganya, berkat chip SID dan VIC-II yang revolusioner.
-
-    \textit{Pada saat buku ini dibuat}, C64 tetap menjadi komputer dengan penjualan tunggal terbanyak sepanjang sejarah. Sebagai Artisan, kita belajar bahwa teknologi yang "membawa kesenangan" (multimedia) akan selalu menemukan jalan ke hati massa. Pengaruh tidak harus selalu kaku; keindahan suara dan gambar adalah cara Artisan untuk memanusiakan mesin.
-\end{description}
-
-\section{1983: Abstraksi Lebih Tinggi dan Navigasi Baru}
-
-Tahun di mana bahasa C mendapatkan kekuatan tambahan dan sistem pengalamatan internet yang kita kenal sekarang lahir.
-
-\begin{description}
-    \item[C++ (C with Classes)] \textit{Saat pertama kali dibuat} oleh Bjarne Stroustrup di Bell Labs, C++ bertujuan untuk menambahkan abstraksi objek ke dalam efisiensi bahasa C. Di balik layar, ia memungkinkan programmer untuk membangun sistem yang jauh lebih besar tanpa kehilangan kendali atas detail memori.
-
-    \textit{Pada saat buku ini dibuat}, C++ masih menjadi tulang punggung mesin game, peramban web, dan sistem perdagangan frekuensi tinggi. Sebagai Artisan, C++ mengajari kita tentang "kompromi yang kuat". Kita bisa memiliki kemewahan kelas dan objek, tapi kita tetap harus memegang pisau bedah manajemen memori. Disiplin Artisan di sini adalah menggunakan kekuatan abstraksi tanpa pernah terhanyut olehnya. Kita tetap harus tahu apa yang terjadi di level memori.
-
-    \item[DNS (Domain Name System)] \textit{Saat pertama kali dibuat} oleh Paul Mockapetris, DNS memungkinkan kita menggunakan nama seperti "google.com" alih-alih alamat IP angka yang rumit.
-
-    \textit{Pada saat buku ini dibuat}, DNS adalah peta navigasi dunia. Di balik layar, ia adalah sistem database terdistribusi yang sangat jenius. Sebagai Artisan, DNS mengajarkan kita tentang "penyederhanaan untuk manusia". Pengaruh besar dicapai ketika kita membuat teknologi yang kompleks menjadi intuitif bagi pengguna biasa, tanpa mengorbankan keandalan sistem di baliknya.
-\end{description}
-\section{1984: Demokratisasi Grafis dan Revolusi Publikasi}
-
-Ini adalah tahun di mana komputer berhenti menjadi sekumpulan teks dan mulai menjadi kanvas visual bagi semua orang.
-
-\begin{description}
-    \item[Apple Macintosh] \textit{Saat pertama kali dibuat}, Macintosh adalah komputer pertama yang sukses membawa GUI (Graphical User Interface) ke khalayak luas dengan harga terjangkau. Di balik layar, kejeniusan Macintosh terletak pada "QuickDraw"—perpustakaan rutin grafis yang sangat cepat yang memungkinkan windows, font, dan kursor bergerak mulus.
-
-    \textit{Pada saat buku ini dibuat}, kita melihat Macintosh 1984 sebagai momen di mana "Teknologi menjadi Ramah". Sebagai Artisan, kita harus memahami apa yang terjadi di balik layar: *Bitmapping*. Setiap piksel di layar adalah representasi langsung dari data di memori (frame buffer). Ini adalah kontrol absolut atas visual. Pengaruh Macintosh datang dari keberaniannya membuang command-line dan memaksa manusia untuk berinteraksi secara spasial. Inilah *The Art of Influence*: mengubah cara manusia mempersepsikan ruang kerja mereka.
-
-    \item[LaserWriter \& PostScript] \textit{Saat pertama kali dibuat} oleh Apple bersama dengan Adobe (John Warnock), LaserWriter memperkenalkan bahasa PostScript. Di balik layar, PostScript adalah bahasa pemrograman \textit{stack-based} dan \textit{Turing-complete} yang menggunakan Kurva Bézier untuk mendeskripsikan bentuk font dan grafik. Ini memungkinkan rendering yang tajam di resolusi apa pun, sebuah lompatan besar dari font *bitmap* yang pecah saat diperbesar.
-
-    \textit{Pada saat buku ini dibuat}, industri publikasi digital (DTP) berhutang budi pada tahun ini. Sebagai Artisan, PostScript mengajari kita tentang "abstraksi berbasis deskripsi". Kita tidak lagi mengatur pin printer secara manual; kita mendeskripsikan \textit{tampilan yang diinginkan} (vektor) dan membiarkan mesin menafsirkan deskripsi tersebut menjadi realitas fisik. Pengaruh besar dicapai melalui bahasa deskripsi yang presisi dan skalabel.
-\end{description}
-
-\section{1985: Jendela Pertama dan Era Multimedia}
-
-Tahun di mana Microsoft mulai membangun "jendela" dunianya sendiri dan Amiga mendefinisikan apa itu komputer kreatif.
-
-\begin{description}
-    \item[Windows 1.0] \textit{Saat pertama kali dibuat}, Windows 1.0 hanyalah sebuah shell grafis yang berjalan di atas MS-DOS. Ia sering dikritik karena lambat dan tidak efisien. Namun, di balik layar, ia mulai membangun fondasi API (Application Programming Interface) yang akan mengikat para pengembang selama dekade-dekade mendatang.
-
-    \textit{Pada saat buku ini dibuat}, Windows 1.0 adalah pengingat bagi Artisan akan pentingnya "kebertahanan teknis". Ia tidak harus sempurna di versi pertama; yang penting adalah memiliki visi untuk membangun ekosistem. Pengaruh Microsoft dibangun di atas kesabaran untuk terus menyempurnakan API hingga ia menjadi standar standar de-facto yang tidak tergoyahkan.
-
-    \item[Commodore Amiga 1000] \textit{Saat pertama kali dibuat}, Amiga adalah komputer multimedia sesungguhnya pertama di dunia. Di balik layar, ia menggunakan chip khusus (Agnus, Denise, Paula) untuk menangani grafis dan suara secara paralel, membebaskan CPU utama dari tugas-tugas berat.
-
-    \textit{Pada saat buku ini dibuat}, arsitektur chip khusus (seperti GPU modern) adalah warisan dari desain Amiga. Sebagai Artisan, Amiga mengajari kita tentang "efisiensi paralelisme". Jangan membebani otak utama (CPU) dengan segalanya; berikan tugas spesifik pada unit spesifik. Inilah keanggunan rekayasa yang sesungguhnya.
-\end{description}
-
-\section{1986: Standar Data dan Kelahiran RISC}
-
-Tahun di mana cara kita mengelola data mulai dibakukan secara internasional dan arsitektur prosesor mulai disederhanakan kembali.
-
-\begin{description}
-    \item[SQL ISO Standardization] \textit{Saat pertama kali dibuat} sebagai standar internasional, SQL benar-benar menjadi bahasa tanpa batas di seluruh sistem database yang berbeda.
-
-    \textit{Pada saat buku ini dibuat}, kemampuan untuk menulis SQL adalah keterampilan Artisan yang wajib dikuasai. Di balik layar, standarisasi ini memungkinkan interoperabilitas data global. Pengaruh sejati dicapai ketika kita setuju pada satu bahasa yang sama untuk mengelola memori kolektif manusia (data).
-
-    \item[MIPS R2000 (RISC)] \textit{Saat pertama kali dibuat}, arsitektur RISC (\textit{Reduced Instruction Set Computer}) kembali ke filosofi kesederhanaan. Di balik layar, ia menggunakan instruksi yang lebih sedikit dan lebih cepat dieksekusi, berlawanan dengan CISC yang semakin kompleks.
-
-    \textit{Pada saat buku ini dibuat}, prosesor ARM di ponsel kita dan chip Apple Silicon (M1/M2/M3) adalah keturunan dari filosofi RISC. Pelajaran Artisan: terkadang kemajuan bukan soal menambahkan, tapi soal "mengurangi hingga yang esensial". Inilah inti dari *Influence* yang efisien: melakukan lebih banyak dengan lebih sedikit instruksi.
-\end{description}
-
-\section{1987: Ekspansi Visual dan Bahasa "Lem"}
-
-Komputer menjadi semakin berwarna dan bahasa pemrograman mulai merambah ke dunia skrip yang fleksibel.
-
-\begin{description}
-    \item[VGA (Video Graphics Array)] \textit{Saat pertama kali dibuat} oleh IBM, VGA membawa standar resolusi 640x480 dengan 16 warna, atau 320x200 dengan 256 warna. Di balik layar, ini adalah evolusi dari digital ke sinyal analog untuk mengontrol monitor.
-
-    \textit{Pada saat buku ini dibuat}, kita hidup di dunia 4K dan 8K. Namun, VGA mengajarkan Artisan tentang "standarisasi antarmuka". Pengaruh VGA begitu kuat sehingga konektor biru 15-pin tetap ada di proyektor dan server selama puluhan tahun. Terkadang, pengaruh bukan soal kualitas tertinggi, tapi soal ketersediaan yang paling luas.
-
-    \item[Perl (Larry Wall)] \textit{Saat pertama kali dibuat}, Perl dirancang untuk memudahkan manipulasi teks dan pelaporan sistem. Larry Wall menyebutnya sebagai "Swiss Army Chainsaw".
-
-    \textit{Pada saat buku ini dibuat}, Perl adalah bahasa yang menyambung pipa-pipa internet awal. Sebagai Artisan, Perl mengajarkan kita bahwa "solusi praktis mengalahkan kesempurnaan teoretis". Pengaruh Perl datang dari kemampuannya untuk menyelesaikan masalah kotor di balik layar dengan cepat dan efektif.
-\end{description}
-
-\section{1988: Stasiun Kerja Masa Depan dan Ancaman Jaringan}
-
-Steve Jobs menunjukkan visi barunya setelah Apple, dan kita menyadari bahwa jaringan yang luas membawa risiko yang besar.
-
-\begin{description}
-    \item[NeXT Computer] \textit{Saat pertama kali dibuat}, NeXT adalah mesin yang sangat mahal dan elegan, dibungkus dalam kubus hitam magnesium. Di balik layar, ia menjalankan sistem operasi NeXTSTEP berbasis Mach kernel dan Object-Oriented C (Obj-C).
-
-    \textit{Pada saat buku ini dibuat}, kita menyadari bahwa NeXTSTEP adalah fondasi dari macOS dan iOS modern. Sebagai Artisan, NeXT mengajari kita tentang "investasi pada masa depan". Meskipun produk fisik tersebut gagal secara komersial, teknologinya adalah apa yang menyelamatkan Apple di kemudian hari. Pengaruh sejati seringkali bersifat laten—ia menunggu saat yang tepat untuk meledak.
-
-    \item[The Morris Worm] \textit{Saat pertama kali dibuat} oleh Robert Tappan Morris, ini adalah virus/worm internet pertama yang menyebar secara luas. Di balik layar, ia mengeksploitasi kerentanan dalam pipa sistem Unix (debug mode sendmail dan buffer overflow).
-
-    \textit{Pada saat buku ini dibuat}, keamanan siber adalah prioritas utama. Morris Worm mengajari Artisan tentang "tanggung jawab kode". Sebuah kesalahan kecil di balik layar sistem yang saling terhubung bisa melumpuhkan dunia. Pengaruh tidak selalu positif; kita harus waspada terhadap gema destruktif dari karya kita.
-\end{description}
-
-\section{1989: Proposal Web dan Game di Saku}
-
-Dekade ini ditutup dengan sebuah dokumen yang akan merobah peradaban manusia selamanya.
-
-\begin{description}
-    \item[The World Wide Web Proposal] \textit{Saat pertama kali dibuat} oleh Tim Berners-Lee di CERN, judulnya sangat rendah hati: "Information Management: A Proposal". Di balik layar, ia mengusulkan penggabungan Hypertext dengan Internet melalui protokol HTTP dan HTML yang berjalan di atas TCP/IP. Ini adalah lapisan abstraksi tertinggi yang menyatukan seluruh informasi dunia.
-
-    \textit{Pada saat buku ini dibuat}, web adalah jantung dari masyarakat modern. Sebagai Artisan, Berners-Lee mengajari kita tentang "kekuatan keterbukaan". Ia tidak memenangkan web dengan mematenkannya, tapi dengan memberikannya secara gratis kepada dunia. Inilah \textit{The Art of Influence} tertinggi: menjadi raja tanpa mahkota dengan memberikan kunci kerajaannya kepada semua orang.
-
-    \item[Nintendo Game Boy] \textit{Saat pertama kali dibuat}, Game Boy bukanlah mesin terkuat (layar monokrom tanpa lampu latar). Namun, ia memiliki daya tahan baterai yang luar biasa dan judul game yang ikonik seperti Tetris.
-
-    \textit{Pada saat buku ini dibuat}, kita melihat Game Boy sebagai teladan dari "keunggulan desain atas spesifikasi". Sebagai Artisan, kita belajar bahwa keandalan dan pengalaman pengguna jauh lebih penting daripada angka-angka performa di atas kertas. Pengaruh datang dari kehadiran yang konsisten di tangan pengguna.
-\end{description}
-
-\section{Atmosfer Era: Dari Hobi ke Korporasi Global}
-
-1980-an adalah era di mana komputer kehilangan bau solder dan mulai berbau plastik baru dan cologne eksekutif.
-
-\textit{Saat pertama kali dibuat}, suasana ini melahirkan etika bisnis teknologi. Kita melihat perang antara IBM, Apple, dan Microsoft. Ada rasa persaingan yang mematikan untuk menjadi "OS di setiap meja". Teknologi bukan lagi sekadar eksperimen, ia adalah senjata ekonomi primer.
-
-\textit{Pada saat buku ini dibuat di tahun 2026}, kita melihat konsolidasi kekuatan yang sama pada raksasa AI. Sebagai Artisan, kita harus belajar dari 1980-an bahwa "sentralisasi" adalah pedang bermata dua. Ia membawa standar, tapi ia juga bisa membunuh keragaman. Pengaruh kita sebagai Artisan harus digunakan untuk memastikan bahwa di balik layar korporasi besar, api kreativitas individu dan standar terbuka tetap terjaga.
-
-\section{Disiplin Sang Artisan: Memahami Jantung Abstraksi}
-
-Pelajaran terpenting dari dekade ini adalah: Jangan pernah biarkan GUI (antarmuka grafis) membutakan Anda terhadap apa yang terjadi di bawahnya.
-
-\textit{Saat pertama kali dibuat}, kemudahan Windows dan Macintosh membuat banyak orang lupa cara mengetik perintah terminal. Para Artisan di masa itu harus disiplin untuk tetap memahami struktur file, alokasi memori, dan interupsi perangkat keras di balik jendela-jendela cantik tersebut.
-
-\textit{Pada saat buku ini dibuat}, kita memiliki lapisan abstraksi yang jauh lebih tebal (Cloud, AI-assisted coding, High-level frameworks). Disiplin Artisan di tahun 2026 adalah untuk secara berkala "merobek jendela" tersebut dan melihat mesin yang berdetak di bawahnya. Pengaruh yang kokoh hanya bisa dibangun oleh mereka yang tahu persis bagaimana data mengalir di balik antarmuka yang mengkilap. Jangan menjadi pengguna alat; jadilah penguasa alat tersebut melalui pemahaman mendalam tentang logikanya.
+Bagi seorang Artisan di tahun 2026, era ini mengajarkan tentang \textbf{Abstraksi yang Elegan}.
+Kita belajar bahwa untuk menangani sistem yang besar, kita harus membungkus kerumitan di dalam kotak hitam (Objek/Paket/Jendela) dan hanya mengekspos tombol-tombol yang diperlukan keluar. Inilah seni menyembunyikan detail demi kewarasan mental.
+
+\section{1980 -- 1983: Menyatukan Bahasa yang Terpecah}
+
+Dunia jaringan sebelum 1983 adalah Menara Babel. Departemen Pertahanan AS memiliki ARPANET. Universitas memiliki CSNET. Perusahaan memiliki jaringan proprieter mereka sendiri (seperti DECNET atau SNA milik IBM). Mereka tidak bisa saling bicara. Data terperangkap dalam silo masing-masing.
+
+Vint Cerf dan Bob Kahn memiliki visi gila: "Jaringan dari jaringan" (\textit{Inter-net}).
+Pada 1 Januari 1983, ARPANET secara resmi beralih menggunakan protokol baru mereka: \textbf{TCP/IP} (\textit{Transmission Control Protocol/Internet Protocol}).
+
+Ini adalah momen "Big Bang" infrastruktur digital.
+Kejeniusan TCP/IP terletak pada desainnya yang agnostik. Ia tidak peduli data apa yang dibawanya (email, gambar, suara) dan ia tidak peduli lewat media apa ia dikirim (kabel tembaga, serat optik, radio, atau bahkan merpati pos).
+Filosofinya adalah: \textbf{Jaringan itu Bodoh, Ujungnya yang Pintar} (\textit{End-to-End Principle}).
+Jaringan hanya bertugas mengantarkan paket. Intelegensia untuk merakit kembali paket berada di komputer pengirim dan penerima.
+Keputusan desain inilah yang memungkinkan internet bertahan hingga hari ini. Ia bisa menelan teknologi baru (seperti streaming video 4K atau panggilan Zoom) tanpa perlu mengubah infrastruktur intinya. Bagi Artisan, ini adalah pelajaran tertinggi dalam \textbf{Desain Skalabilitas}.
+
+Namun, di saat dunia jaringan mulai bersatu, dunia perangkat lunak mulai tertutup.
+Perusahaan-perusahaan mulai menyadari bahwa kode adalah aset berharga. Mereka mulai menguncinya dengan lisensi, merahasiakan kode sumber, dan melarang pengguna untuk memodifikasinya. Budaya berbagi kode ala hacker tahun 70-an mulai mati.
+
+Seorang programmer di MIT bernama \textbf{Richard Stallman} (RMS) merasa tercekik.
+Ketika ia tidak bisa memperbaiki driver printer yang macet karena kodenya tertutup, ia meledak. Ia melihat ini bukan sebagai masalah teknis, tapi masalah moral. "Perangkat lunak yang mengontrol hidup kita harus transparan bagi kita."
+Pada 27 September 1983, ia mengumumkan proyek \textbf{GNU} (\textit{GNU's Not Unix}).
+Tujuannya: Membuat sistem operasi lengkap yang 100\% bebas (\textit{Free Software}). Bebas bukan berarti gratis harga (\textit{free beer}), tapi bebas kebebasan (\textit{free speech}).
+Stallman menciptakan lisensi \textbf{GPL} (\textit{General Public License}) yang revolusioner: "Anda boleh menggunakan kode ini, memodifikasinya, dan menjualnya. Tapi jika Anda mendistribusikannya, Anda harus memberikan kode sumbernya juga kepada penerima."
+Ini adalah \textbf{Copyleft}. Ia menggunakan hukum hak cipta untuk menjamin kebebasan, bukan untuk membatasinya. Tanpa langkah radikal RMS di tahun 1983 ini, kita tidak akan pernah memiliki Linux, Git, atau ekosistem Open Source modern.
+
+\section{1984 -- 1985: Revolusi Otak Kanan}
+
+Selama 40 tahun, komputer adalah alat untuk "Otak Kiri": Logika, Angka, Teks, Baris Perintah.
+Jika Anda ingin menyalin file, Anda mengetik: \texttt{cp file.txt /destination}.
+Itu efisien, tapi dingin. Itu menuntut hafalan, bukan intuisi.
+
+Pada Januari 1984, Steve Jobs dan Apple memperkenalkan \textbf{Macintosh}.
+Dalam iklan Super Bowl "1984" yang disutradarai Ridley Scott, mereka menjanjikan pembebasan dari tirani keseragaman (yang disimbolkan oleh IBM).
+Macintosh berbeda.
+Ia memiliki \textbf{Mouse}. Ia memiliki \textbf{Jendela}. Ia memiliki \textbf{Ikon} tempat sampah. Ia memiliki \textbf{Font} yang indah (Chicago, Geneva, Monaco).
+Tiba-tiba, komputer bisa digunakan oleh "Otak Kanan": Seniman, Musisi, Penulis. Anda bisa \textit{merasakan} data Anda. Anda bisa menyeret (\textit{drag}) dokumen ke folder. Itu spasial. Itu manusiawi.
+
+Namun, di balik layar, membuat GUI itu jauh lebih sulit daripada CLI.
+Dalam CLI, program mengontrol alur: "Tanya nama -> Tunggu input -> Cetak halo".
+Dalam GUI, pengguna yang mengontrol alur: "Pengguna bisa mengklik menu A, atau menggeser jendela B, atau menekan tombol C kapan saja." Program harus siap bereaksi terhadap \textit{event} apa saja.
+
+Kompleksitas kode meledak. Struktur C prosedural menjadi berantakan ("Spaghetti Code") untuk menangani ribuan state tombol dan jendela.
+Dunia membutuhkan cara baru untuk mengorganisir kode.
+Pada tahun 1985, Bjarne Stroustrup di Bell Labs merilis \textbf{C++}.
+Ia mengambil efisiensi bahasa C dan menambahkan konsep \textbf{Kelas} (\textit{Classes}) dari Simula.
+Ini adalah kelahiran \textbf{Object-Oriented Programming (OOP)} di arus utama.
+Dengan OOP, Artisan tidak lagi berpikir tentang "fungsi yang mengubah variabel global". Kita berpikir tentang \textbf{Objek}.
+Jendela adalah Objek. Tombol adalah Objek. Menu adalah Objek. Objek memiliki data sendiri (properti) dan perilaku sendiri (metode). Mereka saling berkirim pesan.
+C++ memungkinkan kita membangun sistem operasi GUI yang sangat kompleks (seperti Windows dan macOS) tanpa kehilangan kewarasan. Ini adalah alat manajemen kompleksitas terbaik pada masanya.
+
+Pada November 1985, Microsoft merilis \textbf{Windows 1.0}.
+Awalnya, itu gagal. Lambat. Jelek. Sedikit aplikasi.
+Apple menertawakannya. Tapi Bill Gates memiliki senjata rahasia: \textbf{Kesabaran Ekosistem}.
+Ia melisensikan Windows ke setiap pembuat PC di dunia. Ia memberi alat pengembangan ke ribuan programmer. Ia tahu bahwa dalam jangka panjang, platform dengan aplikasi terbanyaklah yang akan menang, bukan platform yang paling elegan.
+Strategi ini—\textit{Worse is Better} jika distribusinya lebih luas—adalah pelajaran brutal tapi penting bagi setiap idealis teknologi.
+
+\section{1986 -- 1988: Standar Data dan Hilangnya Kepolosan}
+
+Saat komputer semakin terhubung, data menjadi mata uang baru.
+Pada tahun 1986, \textbf{SQL} (\textit{Structured Query Language}) diadopsi sebagai standar ANSI.
+Sebelumnya, setiap database punya bahasanya sendiri. Sekarang, Artisan di seluruh dunia bisa berbicara bahasa yang sama untuk bertanya pada data: \texttt{SELECT * FROM users WHERE active = true}.
+Standarisasi ini memungkinkan ledakan industri perangkat lunak perusahaan (\textit{Enterprise Software}). Oracle, IBM, dan Microsoft berlomba membuat mesin database terbaik, tetapi bahasanya tetap sama.
+
+Namun, konektivitas yang semakin luas membawa konsekuensi gelap.
+Pada 2 November 1988, Robert Tappan Morris, seorang mahasiswa pascasarjana di Cornell, melepaskan sebuah program eksperimental. Ia ingin mengukur seberapa besar internet itu.
+Program itu dirancang untuk menyalin dirinya sendiri dari satu mesin Unix ke mesin lain, memanfaatkan celah keamanan di \texttt{sendmail} dan \texttt{finger}.
+Tapi Morris membuat kesalahan logika fatal: Program itu menggandakan diri terlalu cepat, bahkan menginfeksi mesin yang sudah terinfeksi berkali-kali.
+
+Dalam hitungan jam, 10\% dari seluruh internet (sekitar 6.000 komputer) lumpuh. Server-server di MIT, Pentagon, dan NASA macet terbebani proses virus tersebut.
+Ini dikenal sebagai \textbf{Morris Worm}.
+Hari itu, "Arsitektur Kepercayaan" internet runtuh. Sebelumnya, internet dijalankan oleh para akademisi yang saling percaya. Administrator sistem saling berbagi akses root. Setelah Morris Worm, tembok api (\textit{Firewalls}) didirikan. Keamanan siber (\textit{Cybersecurity}) lahir sebagai disiplin ilmu pertahanan hidup.
+Kita belajar bahwa setiap koneksi adalah potensi serangan.
+
+\section{1989: Proposal yang Mengubah Peradaban}
+
+Dekade ini ditutup dengan kesunyian di sebuah koridor di CERN, Swiss.
+\textbf{Tim Berners-Lee}, seorang fisikawan Inggris, frustrasi. CERN memiliki ribuan peneliti dengan ribuan dokumen yang tersimpan di komputer yang berbeda-beda. Tidak ada cara mudah untuk menautkan satu dokumen ke dokumen lain di komputer yang berbeda.
+
+Pada Maret 1989, ia mengajukan proposal berjudul \textit{"Information Management: A Proposal"}.
+Atasannya, Mike Sendall, menulis catatan kecil di sampulnya: \textit{"Vague but exciting"} (Samar tapi menarik). Ia memberi Tim waktu untuk mengerjakannya.
+
+Tim tidak menemukan Internet (itu sudah ada berkat TCP/IP).
+Tim tidak menemukan Hypertext (konsep itu sudah ada sejak Engelbart dan Ted Nelson).
+Kejeniusan Tim adalah \textbf{Menggabungkan Keduanya}.
+
+Dia menciptakan tiga teknologi sekaligus:
+1.  \textbf{HTML} (\textit{HyperText Markup Language}): Format sederhana untuk menulis dokumen berantai.
+2.  \textbf{HTTP} (\textit{HyperText Transfer Protocol}): Cara sederhana untuk meminta dokumen tersebut.
+3.  \textbf{URL} (\textit{Uniform Resource Locator}): Alamat unik untuk setiap dokumen di dunia.
+
+Ia menyebut sistem ini \textbf{World Wide Web}.
+Dan keputusan terbesarnya bukanlah pada kodenya, tapi pada filosofinya: Ia membuat Web itu \textbf{Permissionless} (Tanpa Izin).
+Siapa pun bisa membuat tautan ke halaman siapa pun tanpa perlu meminta izin. Tautan bisa saja putus (\textit{Error 404}). Itu tidak masalah. Web tidak harus sempurna; ia harus mudah tumbuh.
+
+Web adalah antarmuka pamungkas.
+Ia membungkus kerumitan TCP/IP, server, dan database di balik satu konsep sederhana: \textbf{Klik Tautan Biru}.
+Dengan ini, internet bukan lagi sekadar milik ilmuwan komputer. Ia siap menjadi milik seluruh umat manusia.
+
+Di penghujung dekade, Nintendo merilis \textbf{Game Boy} (1989).
+Para pesaingnya (Atari Lynx, Sega Game Gear) memiliki layar berwarna dan lampu latar. Game Boy hanya hitam-putih (hijau-hitam, tepatnya) dan tanpa lampu.
+Tapi Game Boy menang telak. Mengapa?
+Karena baterainya tahan 30 jam (lawan 3 jam) dan ia muat di saku.
+Gunpei Yokoi, perancangnya, mengajarkan filosofi \textbf{"Lateral Thinking with Withered Technology"}. Gunakan teknologi lama yang sudah murah dan matang, tapi aplikasikan dengan cara baru yang kreatif. Jangan terobsesi dengan spesifikasi tertinggi; terobsesilah dengan pengalaman pengguna dan konteks penggunaan.
 
 \section{Refleksi Dekade: Kemenangan Struktur}
 
-Dekade 1980-an berakhir dengan runtuhnya Tembok Berlin dan terhubungnya simpul-simpul pertama web.
+Jika kita melihat kembali tahun 80-an, kita melihat dekade di mana kita "Merestrukturisasi Kekacauan".
+Kita membangun struktur visual (GUI) di atas baris perintah.
+Kita membangun struktur objek (OOP/C++) di atas kode prosedural.
+Kita membangun struktur jaringan (TCP/IP) di atas kabel-kabel terpisah.
+Dan kita membangun struktur informasi (WWW) di atas tumpukan file.
 
-\begin{description}
-    \item[Warisan Sang Artisan] \textit{Saat pertama kali dibuat}, dekade ini memberikan kita PC Standar, GUI, C++, RISC, dan proposal World Wide Web. Ini adalah dekade yang mendewasakan teknologi mentah dari tahun 70-an menjadi alat peradaban yang rapi.
+Para Artisan tahun 80-an memberikan kita \textbf{Alat untuk Bermimpi Besar}.
+Tanpa abstraksi-abstraksi ini, kita tidak akan pernah sanggup membangun sistem global seperti Google atau Facebook (yang terdiri dari miliaran baris kode). Otak manusia memiliki batas kognitif, dan tahun 80-an memberikan kita cara untuk melampaui batas itu melalui organisasi yang lebih baik.
 
-    \textit{Pada saat buku ini dibuat}, kita menyadari bahwa setiap antarmuka yang kita sentuh hari ini adalah gema dari inovasi 1980-an. Sebagai Artisan, kita menghargai era ini dengan cara tidak pernah puas hanya dengan permukaan grafis. Kita menggunakan pengaruh kita untuk membangun sistem yang tidak hanya indah di luar, tapi juga jujur dan elegan di balik layar. Kita adalah penjaga integritas di era standarisasi massal.
-\end{description}
+Warisan mereka adalah pesan: \textbf{Rapikan Imajinasimu}.
+Jangan hanya menulis kode yang bekerja; tulislah kode yang terstruktur, yang bisa dibaca, yang bisa digunakan kembali, dan yang bisa terhubung dengan dunia.
+Kemenangan 1980-an adalah kemenangan Arsitektur di atas sekadar Konstruksi.
