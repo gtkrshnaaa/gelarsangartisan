@@ -1,0 +1,18 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
+!./dist/main.pdf
+!./bin/*.pdf
+# Exclude standard intermediate files
+*.dvi
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
