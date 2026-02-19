@@ -17,16 +17,29 @@
 \usepackage{enumitem}
 
 % --- Page Setup ---
-\geometry{
-    a6paper,
-    top=15mm,
-    bottom=15mm,
-    inner=20mm,
-    outer=15mm,
-     headsep=5mm,
-    footskip=10mm,
-    headheight=24pt
-}
+\ifdefined\isprint
+    % Version: Print (A6 Pocketbook)
+    \geometry{
+        a6paper,
+        top=15mm,
+        bottom=15mm,
+        inner=20mm,
+        outer=15mm,
+        headsep=5mm,
+        footskip=10mm,
+        headheight=24pt
+    }
+\else
+    % Version: E-book (A5 Digital)
+    \geometry{
+        a5paper,
+        top=2.5cm,
+        bottom=2.5cm,
+        left=2cm,
+        right=2cm,
+        headheight=24pt
+    }
+\fi
 
 % --- Colors ---
 \definecolor{artisandark}{HTML}{121212}

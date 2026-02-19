@@ -15,16 +15,24 @@ all: pdf
 dirs:
 	@mkdir -p $(BUILDDIR) $(OUTDIR)
 
-# Main build process
-pdf: dirs
-	@echo "Building the artifact..."
+# Main build targets
+pdf: ebook print
+
+ebook: dirs
+	@echo "Building E-book artifact (A5 Digital)..."
 	$(LATEX) $(LATEXFLAGS) $(DOC).tex
-	# Uncomment next line if you have bibliography/references
-	# bibtex $(BUILDDIR)/$(DOC) 
 	$(LATEX) $(LATEXFLAGS) $(DOC).tex
 	$(LATEX) $(LATEXFLAGS) $(DOC).tex
-	@cp -f $(BUILDDIR)/$(DOC).pdf $(OUTDIR)/$(OUTNAME)
-	@echo "DONE. Artifact deployed to: $(OUTDIR)/$(OUTNAME)"
+	@cp -f $(BUILDDIR)/$(DOC).pdf $(OUTDIR)/gelar-sang-artisan-ebook.pdf
+	@echo "DONE. E-book deployed to: $(OUTDIR)/gelar-sang-artisan-ebook.pdf"
+
+print: dirs
+	@echo "Building Print artifact (A6 Pocketbook)..."
+	$(LATEX) $(LATEXFLAGS) "\def\isprint{1} \input{$(DOC).tex}"
+	$(LATEX) $(LATEXFLAGS) "\def\isprint{1} \input{$(DOC).tex}"
+	$(LATEX) $(LATEXFLAGS) "\def\isprint{1} \input{$(DOC).tex}"
+	@cp -f $(BUILDDIR)/$(DOC).pdf $(OUTDIR)/gelar-sang-artisan-print-a6.pdf
+	@echo "DONE. Print version deployed to: $(OUTDIR)/gelar-sang-artisan-print-a6.pdf"
 
 # Dependencies (Ubuntu/Debian) - One time setup
 install:
