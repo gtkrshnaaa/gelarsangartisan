@@ -11,9 +11,8 @@ dist/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-*.pdf
-# Re-include the specific artifact we want (in case *.pdf excluded it)
-!bin/gelar-sang-artisan.pdf
+# Allow all final artifacts in bin/
+!bin/*.pdf
 *.dvi
 *.bbl
 *.blg
