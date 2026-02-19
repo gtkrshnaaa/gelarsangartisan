@@ -27,12 +27,12 @@ ebook: dirs
 	@echo "DONE. E-book deployed to: $(OUTDIR)/gelar-sang-artisan-ebook.pdf"
 
 print: dirs
-	@echo "Building Print artifact (A6 Pocketbook)..."
+	@echo "Building Print artifact (A5 Standard)..."
 	$(LATEX) $(LATEXFLAGS) "\def\isprint{1} \input{$(DOC).tex}"
 	$(LATEX) $(LATEXFLAGS) "\def\isprint{1} \input{$(DOC).tex}"
 	$(LATEX) $(LATEXFLAGS) "\def\isprint{1} \input{$(DOC).tex}"
-	@cp -f $(BUILDDIR)/$(DOC).pdf $(OUTDIR)/gelar-sang-artisan-print-a6.pdf
-	@echo "DONE. Print version deployed to: $(OUTDIR)/gelar-sang-artisan-print-a6.pdf"
+	@cp -f $(BUILDDIR)/$(DOC).pdf $(OUTDIR)/gelar-sang-artisan-print-a5.pdf
+	@echo "DONE. Print version deployed to: $(OUTDIR)/gelar-sang-artisan-print-a5.pdf"
 
 # Dependencies (Ubuntu/Debian) - One time setup
 install:

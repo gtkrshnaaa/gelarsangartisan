@@ -1,4 +1,4 @@
-\documentclass[11pt,twoside,openany]{book}
+\documentclass[11pt,twoside]{book}
 \usepackage{style}
 
 \title{Gelar Sang Artisan}
@@ -8,12 +8,15 @@
 \begin{document}
 
 \frontmatter
+\pagestyle{frontstyle}
 \input{frontmatter/titlepage}
+\cleardoublepage
 \input{frontmatter/about_prince}
 \clearpage
 \tableofcontents
 
 \mainmatter
+\pagestyle{mainstyle}
 
 \input{clusters/00-preface}
 

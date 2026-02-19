@@ -18,15 +18,16 @@
 
 % --- Page Setup ---
 \ifdefined\isprint
-    % Version: Print (A6 Pocketbook)
+    % Version: Print (A5 Standard)
     \geometry{
-        a6paper,
-        top=15mm,
-        bottom=15mm,
-        inner=20mm,
+        a5paper,
+        twoside,
+        top=20mm,
+        bottom=20mm,
+        inner=25mm,
         outer=15mm,
-        headsep=5mm,
-        footskip=10mm,
+        headsep=7mm,
+        footskip=12mm,
         headheight=24pt
     }
 \else
@@ -50,14 +51,27 @@
 \pagecolor{artisandark}
 \AtBeginDocument{\color{artisansilver}}
 
-% --- Headers & Footers ---
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE,RO]{\color{artisansilver}\thepage}
-\fancyhead[RE]{\color{artisansilver}\textit{Gelar Sang Artisan}}
-\fancyhead[LO]{\color{artisansilver}\textit{\leftmark}}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{artisansilver}\leaders\hrule height \headrulewidth\hfill}}
+% --- Explicit Page Styles ---
+
+\fancypagestyle{frontstyle}{
+  \fancyhf{}
+  \fancyhead[LE,RO]{\color{artisansilver}\thepage}
+  \fancyhead[RE]{\color{artisansilver}\textit{Gelar Sang Artisan}}
+  \fancyhead[LO]{\color{artisansilver}\textit{\leftmark}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\fancypagestyle{mainstyle}{
+  \fancyhf{}
+  \fancyhead[LE,RO]{\color{artisansilver}\thepage}
+  \fancyhead[RE]{\color{artisansilver}\textit{Gelar Sang Artisan}}
+  \fancyhead[LO]{\color{artisansilver}\textit{\leftmark}}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\headrule}{\hbox to\headwidth{\color{artisansilver}\leaders\hrule height \headrulewidth\hfill}}
+}
+
+% Default fallback
+\pagestyle{plain}
 
 % --- Override Plain Style (for Chapter pages) ---
 \fancypagestyle{plain}{
@@ -69,17 +83,17 @@
 
 % --- Title Formatting ---
 \titleformat{\chapter}[display]
-  {\normalfont\huge\bfseries\color{artisansilver}}
+  {\normalfont\huge\bfseries\color{artisansilver}\raggedright\hyphenpenalty=10000}
   {\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{30pt}{20pt}
 
 \titleformat{\section}
-  {\normalfont\Large\bfseries\color{artisansilver}}
+  {\normalfont\Large\bfseries\color{artisansilver}\raggedright\hyphenpenalty=10000}
   {\thesection}{1em}{}
 \titlespacing*{\section}{0pt}{18pt}{10pt}
 
 \titleformat{\subsection}
-  {\normalfont\large\bfseries\color{artisansilver}}
+  {\normalfont\large\bfseries\color{artisansilver}\raggedright\hyphenpenalty=10000}
   {\thesubsection}{1em}{}
 \titlespacing*{\subsection}{0pt}{14pt}{6pt}
 
