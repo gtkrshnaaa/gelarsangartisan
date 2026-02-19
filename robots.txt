@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gtkrshnaaa.github.io/gelarsangartisan/sitemap.xml
+Sitemap: https://gelarsangartisan.gtkrshnaaa.my.id/sitemap.xml
